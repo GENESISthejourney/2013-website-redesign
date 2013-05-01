@@ -1,0 +1,139 @@
+a{
+	color:$orange;
+	text-decoration:none;
+
+	&:hover, &:active{
+		text-decoration:none;
+
+		@include transition(all, 0.5s, ease-in-out);
+	}
+
+	&.button{
+		background:$orange;
+		color:$white;
+		display:inline-block;
+		line-height:1;
+		padding:5px 10px;
+
+		@include border_radius;
+
+		&:hover{
+			background:$orange_dark;
+			text-decoration:none;
+		}
+
+		i{
+			padding:0 0 0 10px;
+
+			&.left{
+				padding:0 10px 0 0;
+			}
+		}
+	}
+}
+
+p{
+	margin:1em 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+	color:$orange;
+	font-family:$heading_font_family;
+	font-weight:normal;
+	line-height:0.8;
+	text-transform:uppercase;
+
+	&.block{
+		background:$orange;
+		color:$white;
+		padding:5px 20px;
+		
+		&.green{
+			background:$orange_dark;
+		}
+
+		i{
+			padding:0 10px 0 0;
+		}
+	}
+
+	&.subtitle{
+		color:$gray_medium;
+		text-transform:lowercase;
+	}
+}
+
+h1{
+	font-size:2em;
+}
+h2{
+	font-size:1.8em;
+}
+h3{
+	font-size:1.6em;
+}
+h4{
+	font-size:1.4em;
+}
+h5{
+	font-size:1.2em;
+}
+h6{
+	font-size:1.1em;
+}
+
+blockquote{
+	border-bottom:1px solid $orange;
+	border-top:1px solid $orange;
+	font-style:italic;
+	margin:1em 0;
+	padding:10px 20px;
+	position:relative;
+
+	&:before{
+		background:$gray_soft;
+		color:$orange;
+		content:'“';
+		font-size:3em;
+		font-family:Georgia, serif;
+		left:0;
+		padding:0 10px 0 0;
+		position:absolute;
+		top:-16px;
+	}
+
+	footer{
+		background:$gray_soft;
+		bottom:-13px;
+		color:$orange;
+		font-family:$heading_font_family;
+		font-size:1.6em;
+		font-style:normal;
+		padding:0 0 0 10px;
+		position:absolute;
+		right:0;
+		text-transform:uppercase;
+	}
+}
+
+
+@media only screen and (min-width: 1024px) {
+	h1{
+		font-size:2.8em;
+	}
+	h2{
+		font-size:2.4em;
+	}
+	h3{
+		font-size:2em;
+	}
+	h4{
+		font-size:1.8em;
+	}
+	h5{
+		font-size:1.4em;
+	}
+	h6{
+		font-size:1.2em;
+	}
+}

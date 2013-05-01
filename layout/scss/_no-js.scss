@@ -1,0 +1,47 @@
+.no-js div.mobile-nav{
+	display:none;
+}
+
+.no-js header[role=banner]{
+	a.logo{
+		display:block;
+		padding:5px 0;
+		position:relative;
+		text-align:center;
+		width:100%;
+	}
+
+	aside #search{
+		padding:5px 10px;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+	.no-js header[role=banner]{
+		a.logo{
+			display:inline-block;
+			padding:50px 20px 20px 20px;
+			position:relative;
+			width:auto;
+		}
+		section ul li a{
+			font-size:1.6em;
+		}
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.no-js header[role=banner]{
+		a.logo{
+			position:absolute;
+		}
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.no-js header[role=banner]{
+		section ul li a{
+			font-size:1.9em;
+		}
+	}
+}
