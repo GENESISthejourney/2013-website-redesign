@@ -68,7 +68,7 @@ $heading_font_family: "futura-pt-condensed", sans-serif;
 
 @import 'reset';
 @import 'font-awesome';
-@import 'helpers';
+@import 'bourbon/bourbon';
 
 @import 'base';
 @import 'defaults';

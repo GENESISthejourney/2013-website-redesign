@@ -12,9 +12,8 @@
 		padding:0;
 
 		li{
+			border-radius:2px;
 			margin:5px 0;
-
-			@include border_radius(2px, 2px, 2px, 2px);
 
 			a{
 				background:$orange;
@@ -37,11 +36,10 @@
 
 	.featured-sermons{
 		background:$gray_light;
+		border-radius:5px;
 		clear:both;
 		color:$white;
 		padding:10px;
-
-		@include border_radius;
 
 		h2{
 		color:$gray_dark;
@@ -56,9 +54,8 @@
 				padding:10px 0;
 
 				img{
+					border-radius:2px;
 					max-width:100%;
-
-					@include border_radius(2px, 2px, 2px, 2px);
 				}
 
 				h3{

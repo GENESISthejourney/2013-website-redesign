@@ -35,10 +35,9 @@
 
 					a{
 						border:1px solid $orange;
+						border-radius:5px;
 						display:inline-block;
 						padding:0 5px;
-
-						@include border_radius;
 
 						&:hover{
 							background:$orange;

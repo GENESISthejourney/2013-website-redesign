@@ -17,10 +17,9 @@
 
 			img{
 				max-width:100%;
+				opacity:0.8;
 				position:relative;
 				z-index:1;
-
-				@include opacity(80);
 			}
 		}
 	}
@@ -41,20 +40,19 @@
 
 			li{
 				border:5px solid $white;
+				border-radius:150px;
+				box-shadow:0 0 7px 1px rgba(0, 0, 0, 0.3);
 				display:inline-block;
 				height:100px;
 				margin:0 2px;
 				overflow:hidden;
 				width:100px;
 
-				@include border_radius(150px,150px,150px,150px);
-				@include box_shadow;
-
 				&.cycle-pager-active{
 					border-color:$orange;
 
 					a{
-						@include opacity(99);
+						opacity:1;
 					}
 				}
 
@@ -62,13 +60,12 @@
 					display:block;
 					height:100%;
 					left:-4950px;
+					opacity:0.8;
 					position:relative;
 					width:10000px;
 
-					@include opacity(80);
-
 					&:hover{
-						@include opacity(99);
+						opacity:1;
 					}
 
 					img{

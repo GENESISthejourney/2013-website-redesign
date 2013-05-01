@@ -44,7 +44,7 @@ section[role=main]{
 
 div#body{
     width:100%;
-    @include transition(all, .2s, ease);
+    @include transition(all 0.2s ease);
 }
 
 

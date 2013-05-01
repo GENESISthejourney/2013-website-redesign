@@ -7,9 +7,8 @@ section[role=main]{
 		width:100%;
 
 		img{
+			border-radius:5px;
 			max-width:100%;
-
-			@include border_radius;
 		}
 	}
 
@@ -132,7 +131,7 @@ section[role=main]{
         	width:30%;
 
         	section{
-        		@include border_radius;
+        		border-radius:5px;
         	}
 
         	ul.ads{

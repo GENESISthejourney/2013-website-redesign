@@ -2,12 +2,13 @@ div.mobile-nav{
 	color:#fff;
 	padding:5px 0;
 
-	@include gradient($orange, $orange_dark);
+	@include background-image(linear-gradient($orange 0, $orange_dark 100%));
 	@include clearfix;
 
 	a{
 		background:$orange_dark;
 		border:1px solid #fff;
+		border-radius:5px;
 		display:block;
 		float:left;
 		height:22px;
@@ -15,16 +16,13 @@ div.mobile-nav{
 		padding:3px 5px 0 5px;
 		width:20px;
 
-		@include border_radius;
-
 		i{
 			background:#fff;
+			border-radius:5px;
 			display:block;
 			height:3px;
 			margin:3px 0;
 			width:100%;
-			
-			@include border_radius;
 		}
 	}
 
@@ -46,18 +44,17 @@ header[role=banner]{
 	width:100%;
 	z-index:5;
 
-	@include transition(all, .2s, ease);
+	@include transition(all 0.2s ease);
 
 	a.logo{
 		background:$gray_dark;
+		box-shadow:0 0 7px 1px rgba(0, 0, 0, 0.3);
 		display:none;
 		left:0;
 		padding:50px 20px 20px 20px;
 		position:absolute;
 		top:0;
 		z-index:3;
-
-		@include box_shadow;
 		
 		img{
 			width:150px;
@@ -83,7 +80,7 @@ header[role=banner]{
 			padding:5px 60px 5px 10px;
 			position:relative;
 
-			@include gradient($orange, $orange_dark);
+			@include background-image(linear-gradient($orange 0, $orange_dark 100%));
 
 			.mobile-nav{
 				position:absolute;
@@ -97,14 +94,14 @@ header[role=banner]{
 
 			form{
 				background:#fff;
+				border-radius:12.5px;
 				display:table;
 				height:27px;
 				margin:0;
 				padding:0 15px;
 				width:100%;
 
-				@include border_radius(12.5px, 12.5px, 12.5px, 12.5px);
-				@include box_sizing(border-box);
+				@include box-sizing(border-box);
 				@include clearfix;
 
 				input[type=search]{
@@ -158,15 +155,6 @@ header[role=banner]{
 				&.live, &.time{
 					a{
 						border-right:1px solid #aaa;
-					}
-				}
-
-				&.active{
-
-				/*	@include animations(flash_orange, 5s); */
-
-					a{
-					/*	@include animations(flash_orange, 5s); */
 					}
 				}
 
@@ -240,7 +228,7 @@ header[role=banner]{
 			position:relative;
 			z-index:2;
 
-			@include gradient($orange, $orange_dark);
+			@include background-image(linear-gradient($orange 0, $orange_dark 100%));
 
 			h1{
 				display:block;
@@ -303,11 +291,11 @@ header[role=banner]{
 		}
 
 		section{
+			box-shadow:0 0 7px 1px rgba(0, 0, 0, 0.3);
 			padding:0;
 			position:relative;
 			z-index:1;
-			
-			@include box_shadow;
+
 			@include clearfix;
 		}
 	}

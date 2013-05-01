@@ -5,17 +5,16 @@ a{
 	&:hover, &:active{
 		text-decoration:none;
 
-		@include transition(all, 0.5s, ease-in-out);
+		@include transition(all 0.5s ease-in-out);
 	}
 
 	&.button{
 		background:$orange;
+		border-radius:5px;
 		color:$white;
 		display:inline-block;
 		line-height:1;
 		padding:5px 10px;
-
-		@include border_radius;
 
 		&:hover{
 			background:$orange_dark;
