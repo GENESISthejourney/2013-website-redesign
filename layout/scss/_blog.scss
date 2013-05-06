@@ -6,6 +6,10 @@
 
 			@include clearfix;
 
+			img{
+				max-width:100%;
+			}
+
 			time{
 				color:$gray_medium;
 				display:block;

@@ -29,7 +29,8 @@ $nav_link_color: #f7941e;
 
 
 $default_font_family: "futura-pt", Arial, Helvetica, sans-serif;
-$heading_font_family: "futura-pt-condensed", sans-serif;
+$condensed_font_family: "futura-pt-condensed", sans-serif;
+$heading_font_family: "minion-pro", serif;
 
 
 @mixin body_background {
@@ -68,7 +69,9 @@ $heading_font_family: "futura-pt-condensed", sans-serif;
 
 @import 'reset';
 @import 'font-awesome';
+@import 'city';
 @import 'bourbon/bourbon';
+@import 'helper';
 
 @import 'base';
 @import 'defaults';
@@ -76,6 +79,7 @@ $heading_font_family: "futura-pt-condensed", sans-serif;
 
 @import 'header';
 @import 'navigation';
+@import 'nav_custom';
 @import 'footer';
 
 @import 'home';

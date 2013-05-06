@@ -6,8 +6,6 @@ div.mobile-nav{
 	@include clearfix;
 
 	a{
-		background:$orange_dark;
-		border:1px solid #fff;
 		border-radius:5px;
 		display:block;
 		float:left;
@@ -16,8 +14,18 @@ div.mobile-nav{
 		padding:3px 5px 0 5px;
 		width:20px;
 
-		i{
+		&:hover{
+			hr{
+				box-shadow:0 0 20px $white;
+			}
+			i{
+				text-shadow:0 0 20px $white;
+			}
+		}
+
+		hr{
 			background:#fff;
+			border:0 none;
 			border-radius:5px;
 			display:block;
 			height:3px;
@@ -27,13 +35,11 @@ div.mobile-nav{
 	}
 
 	h1{
-		background:url(../images/logo-mobile.png) no-repeat 0 0;
+		color:$white;
 		float:left;
-		font-size:2em;
+		font-size:3em;
 		height:25px;
 		margin:0;
-		text-indent:-9999em;
-		width:145px;
 	}
 
 }
@@ -63,11 +69,16 @@ header[role=banner]{
 	
 	aside{
 		background: #eee;
-		padding:0;
+		padding:5px 60px 5px 115px;
 		position:relative;
 		z-index:2;
 		
+		@include background-image(linear-gradient($orange 0, $orange_dark 100%));
 		@include clearfix;
+
+		.wrapper{
+			position:static;
+		}
 
 		h1{
 			color:#fff;
@@ -75,64 +86,104 @@ header[role=banner]{
 			font-size:1.8em;
 		}
 
-		#search{
-			display:block;
-			padding:5px 60px 5px 10px;
-			position:relative;
+		.mobile-nav{
+			position:absolute;
+			right:0;
+			top:0;
 
-			@include background-image(linear-gradient($orange 0, $orange_dark 100%));
+			a{
+				color:$white;
+				font-size:1.8em;
+				height:21px;
+				padding:4px 5px 0 5px;
+				margin:0 10px 0 0;
+				text-align:center;
+			}
+		}
 
-			.mobile-nav{
-				position:absolute;
-				right:0;
-				top:0;
+		form{
+			background:rgba(255, 255, 255, 0.15);
+			border-radius:12.5px;
+			display:table;
+			height:27px;
+			margin:0;
+			padding:0 10px;
+			width:100%;
 
-				a{
-					margin:0 10px 0 0;
+			@include box-sizing(border-box);
+			@include clearfix;
+
+			input[type=search]{
+				background:none;
+				border:0 none;
+				color:$white;
+				display:table-cell;
+				font-size:1.6em;
+				line-height:27px;
+				padding:0;
+				vertical-align:middle;
+				width:inherit;
+
+				@include placeholder {
+					color:rgba(255, 255, 255, 0.7);
 				}
 			}
 
-			form{
-				background:#fff;
-				border-radius:12.5px;
-				display:table;
-				height:27px;
-				margin:0;
-				padding:0 15px;
-				width:100%;
+			a#search-submit{
+				color:rgba(255, 255, 255, 0.7);
+				display:table-cell;
+				font-size:2em;
+				line-height:1;
+				padding:4px 0 0 0;
+				text-align:right;
+				vertical-align:middle;
+				width:25px;
 
-				@include box-sizing(border-box);
-				@include clearfix;
-
-				input[type=search]{
-					background:none;
-					border:0 none;
-					display:table-cell;
-					font-size:1.6em;
-					line-height:27px;
-					padding:0;
-					vertical-align:middle;
-					width:inherit;
+				&:hover{
+					color:$white;
 				}
+			}
+		}
 
-				a#search-submit{
-					color:$gray_light;
-					display:table-cell;
-					font-size:2em;
-					line-height:1;
-					padding:4px 0 0 0;
-					text-align:right;
-					vertical-align:middle;
-					width:25px;
+		ul.social{
+			height:26px;
+			left:5px;
+			list-style:none;
+			margin:0;
+			padding:0;
+			position:absolute;
+			top:5px;
+
+			@include clearfix;
+
+			li{
+				display:inline-block;
+				float:left;
+				font-size:2.5em;
+				height:23px;
+				line-height:1;
+				margin:0 0 0 5px;
+				text-align:center;
+				width:27px;
+
+				a{
+					color:rgba(255, 255, 255, 0.9);
+					display:inline-block;
+					height:100%;
+					width:100%;
 
 					&:hover{
-						color:$gray_dark;
+						color:$white;
+					}
+
+					&.icon-the-city{
+						font-size:0.8em;
 					}
 				}
 			}
 		}
 
-		ul{
+		ul.top-nav{
 			background:$gray_light;
 			list-style:none;
 			margin:0;
@@ -219,36 +270,98 @@ header[role=banner]{
 		top:auto;
 		width:auto;
 
+		@include transition(none);
+
 		a.logo{
 			display:inline-block;
-			float:left;
-			position:relative;
+			left:0;
+			position:absolute;
+			top:0;
 			width:auto;
 		}
 		
 		aside{
 			color:#fff;
-			padding:0 10px 0 0;
+			height:35px;
+			padding:0;
 			position:relative;
 			z-index:2;
 
-			@include background-image(linear-gradient($orange 0, $orange_dark 100%));
+			.wrapper{
+				padding:4px 10px 0 0;
+				position:relative;
+
+				@include clearfix;
+			}
 
 			h1{
 				display:block;
 				float:right;
 				padding:0 20px 0 0;
 			}
-			#search{
-				background:none;
-				display:block;
-				float: right;
-				padding:5px 0;
-				position:relative;
-				width:60%;
+
+			form{
+				float:right;
+				width:100px;
+
+				@include transition (all 0.2s ease-in-out);
+
+				&.focus, &:hover{
+					background:rgba(255, 255,255, 0.7);
+					color:$orange;
+
+
+					input[type=search]{
+						color:$orange;
+
+						@include placeholder {
+							color:$orange;
+						}
+					}
+
+					a#search-submit{
+						color:$orange;
+
+						&:hover{
+							color:$orange_dark;
+						}
+					}
+				}
+
+				&.expanded{
+					width:250px;
+				}
+
+				a#search-submit{
+					padding:4px 0 0 10px;
+				}
 			}
 
-			ul{
+			ul.social{
+				float:right;
+				left:0;
+				position:relative;
+				top:0;
+
+				@include clearfix;
+
+				li{
+					background:rgba(255,255,255,0.15);
+					border-radius:12.5px;
+					font-size:2em;
+					padding:4px 0 0 0;
+
+					&:hover{
+						background:rgba(255, 255,255, 0.7);
+
+						a{
+							color:$orange;
+						}
+					}
+				}
+			}
+
+			ul.top-nav{
 				background:none;
 				float:right;
 				padding:0 10px 0 0;
@@ -307,17 +420,7 @@ header[role=banner]{
 
 @media only screen and (min-width: 768px) {
 	header[role=banner]{
-		position:fixed;
 		width:100%;
-
-		a.logo{
-			position:absolute;
-		}
-		aside{
-			#search{
-				width:auto;
-			}
-		}
 	}
 }
 

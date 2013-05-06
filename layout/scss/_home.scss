@@ -1,5 +1,40 @@
 #home{
 	section[role=main]{
 	    margin:0 auto;
+
+	    @include clearfix;
+
+	    .blog{
+	    	width:100%;
+	    }
+	}
+}
+
+@media only screen and (min-width: 600px) {
+	#home{
+		section[role=main]{
+		    .blog{
+		    	width:100%;
+		    }
+		}
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	#home{
+		section[role=main]{
+		    .blog{
+		    	width:40%;
+		    }
+		}
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	#home{
+		section[role=main]{
+		    .blog{
+		    }
+		}
 	}
 }

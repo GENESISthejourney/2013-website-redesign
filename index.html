@@ -21,54 +21,169 @@
         <aside>
             <div class="wrapper">
                 <a href="/" class="logo"><img src="images/logo.png" /></a>
-                <div id="search">
-                    <form method="post" action="/search">
-                        <input type="search" id="searchTerm" name="searchTerm" value="" title="search" placeholder="Search" />
-                        <a href="#" id="search-submit" class="icon-search"></a>
-                    </form>
-                    <div class="mobile-nav">
-                        <a href="#"><i></i><i></i><i></i></a>
-                    </div>
-                </div>
-                <ul id="top-nav">
-                    <li class="active live"><a href="#"><i class="icon-play-circle"></i>LIVE</a></li>
-                    <!--<li class="contact"><a href="#"><i class="icon-info-sign"></i>CONTACT</a></li>-->
-                    <li class="time"><a href="#"><i class="icon-group"></i>SUN @ 9AM&amp;11AM</a></li>
-                    <!--<li class="campus"><a href="#" class="pick">Pick Your Campus<i class="icon-chevron-down"></i></a></li>-->
+                <ul class="social">
+                    <li><a href="https://www.facebook.com/genesisthejourney" class="icon-facebook" target="_blank"></a></li>
+                    <li><a href="https://twitter.com/genesisboston" class="icon-twitter" target="_blank"></a></li>
+                    <li><a href="https://genesischurch.onthecity.org" class="icon-the-city" target="_blank"></a></li>
                 </ul>
-                <!--<ul id="campus">
-                    <li><a href="#">Woburn</a></li>
-                    <li><a href="#">Test Campus</a></li>
-                </ul>-->
+                <form method="post" action="/search">
+                    <input type="search" id="searchTerm" name="searchTerm" value="" title="search" placeholder="Search" />
+                    <a href="#" id="search-submit" class="icon-search"></a>
+                </form>
+                <div class="mobile-nav">
+                    <a href="#"><i class="icon-arrow-right"></i></a>
+                </div>
             </div>
         </aside>
         <section>
             <div class="wrapper">
                 <nav>
                     <ul>
-                        <li class="icon-chevron-right"><a href="#">I Am New <span>What To Expect</span></a></li>
-                        <li class="icon-chevron-right"><a href="#">Grow <span>Sermons | Blog</span></a></li>
-                        <li class="icon-chevron-right"><a href="#">Loving God <span>Beliefs | Visions</span></a></li>
-                        <li class="icon-chevron-right"><a href="#">Loving People <span>Groups | Ministries</span></a>
+                        <li class="icon-chevron-right" data-nav="new"><a href="#">I Am New<span class="triangle"></span></a>
+                            <ul>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Sermons</a></li>
+                            </ul>
+                        </li>
+                        <li class="icon-chevron-right" data-nav="grow"><a href="#">Grow<span class="triangle"></span></a>
+                            <ul>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Sermons</a></li>
+                            </ul>
+                        </li>
+                        <li class="icon-chevron-right" data-nav="loving-god"><a href="#">Loving God<span class="triangle"></span></a>
+                            <ul>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Sermons</a></li>
+                            </ul>
+                        </li>
+                        <li class="icon-chevron-right" data-nav="loving-people"><a href="#">Loving People<span class="triangle"></span></a>
                             <ul>
                                 <li><a href="#">Community Groups</a></li>
                                 <li><a href="#">Creative</a></li>
                                 <li><a href="#">Facilities</a></li>
+                                <li><a href="#">Kids</a></li>
+                                <li><a href="#">Prayer</a></li>
+                                <li><a href="#">Students</a></li>
                                 <li><a href="#">Worship</a></li>
-                                <li><a href="#">Youth</a></li>
                             </ul>
                         </li>
                         
-                        <li class="icon-chevron-right"><a href="#">Give <span>Donate | Serve</span></a></li>
+                        <li class="icon-chevron-right" data-nav="give"><a href="#">Give<span class="triangle"></span></a>
+                            <ul>
+                                <li><a href="#">Finacial</a></li>
+                                <li><a href="#">Serving</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                    
+
+                    <div id="loving-people" class="fancy-nav">
+                        <h1>Community &amp; Ministries</h1>
+                        <div class="feature">
+                            <a href="#"><img src="images/pages/cg.jpg" /></a>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel tempor lectus. Aliquam libero magna, sodales nec consectetur sit amet, volutpat vel neque. Duis vulputate sagittis magna, a facilisis ipsum rutrum a.</p>
+                            <ul>
+                                <li><a href="#"><i class="icon-group"></i> Learn More About CG</a></li>
+                                <li><a href="#"><i class="icon-map-marker"></i> Find a CG Near You</a></li>
+                            </ul>
+                        </div>
+                        <div class="nav-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel tempor lectus. Aliquam libero magna, sodales nec consectetur sit amet, volutpat vel neque. Duis vulputate sagittis magna, a facilisis ipsum rutrum a.</p>
+
+                            <ul>
+                                <li><a href="#">Community Groups</a></li>
+                                <li><a href="#">Creative</a></li>
+                                <li><a href="#">Facilities</a></li>
+                                <li><a href="#">Kids</a></li>
+                                <li><a href="#">Prayer</a></li>
+                                <li><a href="#">Students</a></li>
+                                <li><a href="#">Worship</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="give" class="fancy-nav">
+                        <h1>Donate | Serve</h1>
+                        <div class="feature">
+                            <a href="#"><img src="images/pages/cg.jpg" /></a>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel tempor lectus. Aliquam libero magna, sodales nec consectetur sit amet, volutpat vel neque. Duis vulputate sagittis magna, a facilisis ipsum rutrum a.</p>
+                            <ul>
+                                <li><a href="#"><i class="icon-map-marker"></i> Find a Serving Opportunity</a></li>
+                            </ul>
+                        </div>
+                        <div class="nav-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel tempor lectus. Aliquam libero magna, sodales nec consectetur sit amet, volutpat vel neque. Duis vulputate sagittis magna, a facilisis ipsum rutrum a.</p>
+
+                            <ul>
+                                <li><a href="#">Finacial</a></li>
+                                <li><a href="#">Serving</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="loving-god" class="fancy-nav">
+                        <h1>Beliefs &amp; Visions</h1>
+                        <div class="feature">
+                            <a href="#"><img src="images/pages/cg.jpg" /></a>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel tempor lectus. Aliquam libero magna, sodales nec consectetur sit amet, volutpat vel neque. Duis vulputate sagittis magna, a facilisis ipsum rutrum a.</p>
+                            <ul>
+                                <li><a href="#"><i class="icon-map-marker"></i> Find a Serving Opportunity</a></li>
+                            </ul>
+                        </div>
+                        <div class="nav-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel tempor lectus. Aliquam libero magna, sodales nec consectetur sit amet, volutpat vel neque. Duis vulputate sagittis magna, a facilisis ipsum rutrum a.</p>
+
+                            <ul>
+                                <li><a href="#">Finacial</a></li>
+                                <li><a href="#">Serving</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="grow" class="fancy-nav">
+                        <h1>Sermons | Blog | Media</h1>
+                        <div class="feature">
+                            <a href="#"><img src="images/hero/acts.jpg" /></a>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel tempor lectus. Aliquam libero magna, sodales nec consectetur sit amet, volutpat vel neque. Duis vulputate sagittis magna, a facilisis ipsum rutrum a.</p>
+                            <ul>
+                                <li><a href="#"><i class="icon-play"></i> Watch Latest Sermon</a></li>
+                            </ul>
+                        </div>
+                        <div class="nav-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel tempor lectus. Aliquam libero magna, sodales nec consectetur sit amet, volutpat vel neque. Duis vulputate sagittis magna, a facilisis ipsum rutrum a.</p>
+
+                            <ul>
+                                <li><a href="#">Finacial</a></li>
+                                <li><a href="#">Serving</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="new" class="fancy-nav">
+                        <h1>Help! I'm New</h1>
+                        <div class="feature">
+                            <a href="#"><img src="images/hero/acts.jpg" /></a>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel tempor lectus. Aliquam libero magna, sodales nec consectetur sit amet, volutpat vel neque. Duis vulputate sagittis magna, a facilisis ipsum rutrum a.</p>
+                            <ul>
+                                <li><a href="#"><i class="icon-play"></i> Watch Latest Sermon</a></li>
+                            </ul>
+                        </div>
+                        <div class="nav-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel tempor lectus. Aliquam libero magna, sodales nec consectetur sit amet, volutpat vel neque. Duis vulputate sagittis magna, a facilisis ipsum rutrum a.</p>
+
+                            <ul>
+                                <li><a href="#">Finacial</a></li>
+                                <li><a href="#">Serving</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </nav>
             </div>
         </section>
     </header>
     <div id="body">
         <div class="mobile-nav">
-            <a href="#"><i></i><i></i><i></i></a>
+            <a href="#"><hr /><hr /><hr /></a>
             <h1>GENESIS</h1>
         </div>
         <div id="hero">
