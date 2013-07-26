@@ -26,6 +26,9 @@ header[role=banner]{
 					&:hover, &.current, &.currentParent, &.active{
 						background:#ccc;
 					}
+					&.search{
+						display:none;
+					}
 
 					a{
 						color:$gray_medium;
@@ -36,6 +39,12 @@ header[role=banner]{
 						text-transform:uppercase;
 						padding:10px 20px;
 						position:relative;
+
+						span{
+							font-size:0.8em;
+							padding:0 0 0 10px;
+							text-transform:lowercase;
+						}
 					}
 
 					.triangle{
@@ -43,11 +52,12 @@ header[role=banner]{
 						display:none;
 						left:50%;
 						margin-left:-10px;
+						padding:0;
 						position:absolute;
 
 						@include triangle(20px, $gray_dark, up);
 					}
-					
+
 
 					ul{
 						background:#ccc;
@@ -80,6 +90,51 @@ header[role=banner]{
 					}
 				}
 			}
+
+			form{
+				background:rgba(255, 255, 255, 0.15);
+				border-radius:12.5px;
+				display:table;
+				height:27px;
+				margin:0;
+				padding:0 10px;
+				width:100%;
+
+				@include box-sizing(border-box);
+				@include clearfix;
+
+				input[type=search]{
+					background:none;
+					border:0 none;
+					color:$white;
+					display:table-cell;
+					font-size:1.6em;
+					line-height:27px;
+					padding:0;
+					vertical-align:middle;
+					width:inherit;
+
+					@include placeholder {
+						color:rgba(255, 255, 255, 0.7);
+					}
+				}
+
+				a#search-submit{
+					color:rgba(255, 255, 255, 0.7);
+					display:table-cell;
+					font-size:2em;
+					line-height:1;
+					padding:4px 0 0 0;
+					text-align:right;
+					vertical-align:middle;
+					width:25px;
+
+					&:hover{
+						color:$white;
+					}
+				}
+			}
+
 		}
 	}
 }
@@ -100,7 +155,7 @@ header[role=banner]{
 			margin-left:0;
 		}
 		div#body{
-			margin-right:-100%;
+			margin-right:-200%;
 		}
 	}
 }
@@ -143,11 +198,23 @@ header[role=banner]{
 							display:none;
 						}
 					}
+					&.search{
+						display:block;
+
+						a{
+							padding:0;
+						}
+
+						i{
+							font-size:1em;
+						}
+					}
 
 					a{
 						display:table-cell;
-						font-size:2em;
-						padding:10px;
+						font-size:1.5em;
+						line-height:50px;
+						padding:0 10px;
 						text-align:center;
 						vertical-align:middle;
 
@@ -158,6 +225,10 @@ header[role=banner]{
 						i{
 							font-size:0.7em;
 						}
+
+						span{
+							display:none;
+						}
 					}
 
 					&.icon-chevron-right:before,&.icon-chevron-down:before{
@@ -167,6 +238,10 @@ header[role=banner]{
 					ul{
 						display:none;
 					}
+				}
+
+				form{
+					display:none;
 				}
 			}
 		}
@@ -180,7 +255,23 @@ header[role=banner]{
 
 				li{
 					a{
-						font-size:2.4em;
+						font-size:2.2em;
+						padding:0 15px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 900px) {
+	header[role=banner] section{
+		nav{
+			ul{
+
+				li{
+					a{
+						font-size:2.6em;
 					}
 				}
 			}
@@ -194,8 +285,8 @@ header[role=banner]{
 			ul{
 				li{
 					a{
-						font-size:3em;
-						padding:10px 20px;
+						font-size:2.6em;
+						padding:0 20px;
 					}
 				}
 			}

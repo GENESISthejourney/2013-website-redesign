@@ -2,6 +2,11 @@
 	built with SASS
 */
 
+@import 'reset';
+@import 'font-awesome';
+@import 'city';
+@import 'bourbon/bourbon';
+
 
 $orange: #f87a2a;
 $orange_dark: #ec6814;
@@ -37,40 +42,16 @@ $heading_font_family: "minion-pro", serif;
 	background: #eee url(../images/bkgrd.png) repeat 0 0;
 }
 
-
-@keyframes flash_orange
-{
-	0%{background:$gray_soft;color:$gray_dark;}
-	50%{background:$orange;color:#fff;}
-	100%{background:$gray_soft;color:$gray_dark;}
-}
-
-@-moz-keyframes flash_orange /* Firefox */
-{
-	0%{background:$gray_soft;color:$gray_dark;}
-	50%{background:$orange;color:#fff;}
-	100%{background:$gray_soft;color:$gray_dark;}
-}
-
-@-webkit-keyframes flash_orange /* Safari and Chrome */
-{
-	0%{background:$gray_soft;color:$gray_dark;}
-	50%{background:$orange;color:#fff;}
-	100%{background:$gray_soft;color:$gray_dark;}
-}
-
-@-o-keyframes flash_orange /* Opera */
-{
-	0%{background:$gray_soft;}
-	50%{background:$orange;}
-	100%{background:$gray_soft;}
+@include keyframes(liveFlash) {
+  0%, 100% {
+    background:rgba(255, 255, 255, 0.7);color:$orange;
+  }
+  50% {
+    background:transparent;color:rgba(255, 255, 255, 0.9);
+  }
 }
 
 
-@import 'reset';
-@import 'font-awesome';
-@import 'city';
-@import 'bourbon/bourbon';
 @import 'helper';
 
 @import 'base';
@@ -81,6 +62,7 @@ $heading_font_family: "minion-pro", serif;
 @import 'navigation';
 @import 'nav_custom';
 @import 'footer';
+@import 'countdown';
 
 @import 'home';
 @import 'interior';

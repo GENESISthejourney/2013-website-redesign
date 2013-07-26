@@ -33,7 +33,7 @@
 			if ($(window).width() > 599)
 				fancyNav = true;
 
-			if(!obj.children('ul').length)
+			if(!obj.children('ul').length && obj.data('nav') != 'search')
 				return;
 
 			if(obj.hasClass('active')){
@@ -65,8 +65,14 @@
 				$(this).parent('form').removeClass('expanded');
 		});
 
-		$('html').click(function(){
+		$('html').click(function(e){
 			$('header[role=banner] nav ul li').removeClass('active');
+			$('.fancy-nav').removeClass('active');
 		});
+
+		$('.fancy-nav').click(function(e){
+			e.stopPropagation();
+		});
+
     });	
 })(jQuery);

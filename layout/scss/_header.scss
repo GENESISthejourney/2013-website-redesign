@@ -61,18 +61,18 @@ header[role=banner]{
 		position:absolute;
 		top:0;
 		z-index:3;
-		
+
 		img{
 			width:150px;
 		}
 	}
-	
+
 	aside{
 		background: #eee;
 		padding:5px 60px 5px 115px;
 		position:relative;
 		z-index:2;
-		
+
 		@include background-image(linear-gradient($orange 0, $orange_dark 100%));
 		@include clearfix;
 
@@ -87,6 +87,7 @@ header[role=banner]{
 		}
 
 		.mobile-nav{
+			background:none;
 			position:absolute;
 			right:0;
 			top:0;
@@ -199,7 +200,7 @@ header[role=banner]{
 				a{
 					color:$gray_dark;
 					display:block;
-					padding:5px 10px;
+					padding:0 10px;
 
 					i{
 						font-size:1.2em;
@@ -207,38 +208,9 @@ header[role=banner]{
 					}
 				}
 
-				&.live, &.time{
-					a{
-						border-right:1px solid #aaa;
-					}
-				}
-
-				&:hover, &.selected{
-					background:$gray_medium;
-
-					a{
-						color:#fff;
-
-						i{
-							color:#fff;
-						}
-					}
-				}
-
 				&:last-child{
 					a{
 						border-right:0 none;
-					}
-				}
-			}
-
-			&#campus{
-				display:none;
-				
-				li{
-					background:$gray_medium;
-					a{
-						color:#fff;
 					}
 				}
 			}
@@ -279,7 +251,7 @@ header[role=banner]{
 			top:0;
 			width:auto;
 		}
-		
+
 		aside{
 			color:#fff;
 			height:35px;
@@ -288,7 +260,7 @@ header[role=banner]{
 			z-index:2;
 
 			.wrapper{
-				padding:4px 10px 0 0;
+				padding:0 10px 0 0;
 				position:relative;
 
 				@include clearfix;
@@ -301,47 +273,14 @@ header[role=banner]{
 			}
 
 			form{
-				float:right;
-				width:100px;
-
-				@include transition (all 0.2s ease-in-out);
-
-				&.focus, &:hover{
-					background:rgba(255, 255,255, 0.7);
-					color:$orange;
-
-
-					input[type=search]{
-						color:$orange;
-
-						@include placeholder {
-							color:$orange;
-						}
-					}
-
-					a#search-submit{
-						color:$orange;
-
-						&:hover{
-							color:$orange_dark;
-						}
-					}
-				}
-
-				&.expanded{
-					width:250px;
-				}
-
-				a#search-submit{
-					padding:4px 0 0 10px;
-				}
+				display:none;
 			}
 
 			ul.social{
 				float:right;
 				left:0;
 				position:relative;
-				top:0;
+				top:4px;
 
 				@include clearfix;
 
@@ -369,39 +308,26 @@ header[role=banner]{
 
 				li{
 					font-size:1.2em;
-					padding:5px 0;
+					padding:0;
 					text-align:left;
 					width:auto;
 
+					a, span.service{
+						display:inline-block;
+						line-height:35px;
+					}
 					a{
-						border-right:1px solid #fff;
-						color:#fff;
-					}
-					&.campus{
-						top:0;
-						left:0;
-						position:absolute;
+						border-right:1px solid rgba(255, 255, 255, 0.7);
+						color:rgba(255, 255, 255, 0.9);
 
-						a{
-							border-right:0 none;
+						&:hover{
+							background:rgba(255, 255, 255, 0.7);
+							color:$orange;
 						}
-					}
-				}
 
-				&#campus{
-					display:none;
-					left:0;
-					position:absolute;
-					top:40px;
-					width:200px;
-					
-					li{
-						display:block;
-						float:none;
-						left:auto;
-						position:relative;
-						top:auto;
-						width:100%;
+						&.live{
+							@include animation(liveFlash 2.0s ease-in-out infinite);
+						}
 					}
 				}
 			}

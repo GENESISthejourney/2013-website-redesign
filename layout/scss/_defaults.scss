@@ -30,14 +30,9 @@ section[role=main]{
 	font-size:1.8em;
 	z-index:1;
 
-    p a{
-        background:$orange;
-        color:$white;
-        display:inline-block;
-        padding:0 2px;
-
-        &:hover{
-            background:$gray_dark;
+    .content-left, .content-full{
+        h1, h2, h3, h4, h5, h6{
+            margin:0.25em 0;
         }
     }
 }
@@ -45,44 +40,6 @@ section[role=main]{
 div#body{
     width:100%;
     @include transition(all 0.2s ease);
-}
-
-
-
-@media only screen and (min-width: 600px) {
-    footer[role=contentinfo]{
-        ul.social{
-            margin:0;
-            float:right;
-            width:auto;
-        }
-        p.location{
-            margin:0;
-            float:left;
-        }
-        div.copyright{
-            text-align:left;
-            clear:both;
-            @include clearfix;
-
-            p{
-                float:left;
-            }
-            a.email-connect{
-                display:inline;
-
-                &:before{
-                    content: ' | ';
-                    color:#fff;
-                    display:inline;
-                }
-            }
-            span{
-                float:right;
-                display:inline;
-            }
-        }
-    }
 }
 
 
