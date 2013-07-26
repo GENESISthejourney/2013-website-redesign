@@ -3,6 +3,7 @@ header[role=banner]{
 		nav{
 			margin:0;
 			padding:0;
+			position:relative;
 
 			ul{
 				list-style:none;
@@ -12,7 +13,7 @@ header[role=banner]{
 				li{
 					border-bottom:1px solid #ccc;
 					display:block;
-					position:relative;
+					position:static;
 
 					&:before{
 						color:$gray_dark;
@@ -25,24 +26,38 @@ header[role=banner]{
 					&:hover, &.current, &.currentParent, &.active{
 						background:#ccc;
 					}
+					&.search{
+						display:none;
+					}
 
 					a{
-						color:$gray_dark;
+						color:$gray_medium;
 						display:block;
-						font-family:$heading_font_family;
+						font-family:$condensed_font_family;
 						font-size:1.8em;
 						line-height:1;
 						text-transform:uppercase;
 						padding:10px 20px;
+						position:relative;
 
 						span{
-							display:inline-block;
-							color:$gray_medium;
 							font-size:0.8em;
+							padding:0 0 0 10px;
 							text-transform:lowercase;
 						}
 					}
-					
+
+					.triangle{
+						bottom:0;
+						display:none;
+						left:50%;
+						margin-left:-10px;
+						padding:0;
+						position:absolute;
+
+						@include triangle(20px, $gray_dark, up);
+					}
+
 
 					ul{
 						background:#ccc;
@@ -75,6 +90,51 @@ header[role=banner]{
 					}
 				}
 			}
+
+			form{
+				background:rgba(255, 255, 255, 0.15);
+				border-radius:12.5px;
+				display:table;
+				height:27px;
+				margin:0;
+				padding:0 10px;
+				width:100%;
+
+				@include box-sizing(border-box);
+				@include clearfix;
+
+				input[type=search]{
+					background:none;
+					border:0 none;
+					color:$white;
+					display:table-cell;
+					font-size:1.6em;
+					line-height:27px;
+					padding:0;
+					vertical-align:middle;
+					width:inherit;
+
+					@include placeholder {
+						color:rgba(255, 255, 255, 0.7);
+					}
+				}
+
+				a#search-submit{
+					color:rgba(255, 255, 255, 0.7);
+					display:table-cell;
+					font-size:2em;
+					line-height:1;
+					padding:4px 0 0 0;
+					text-align:right;
+					vertical-align:middle;
+					width:25px;
+
+					&:hover{
+						color:$white;
+					}
+				}
+			}
+
 		}
 	}
 }
@@ -95,7 +155,7 @@ header[role=banner]{
 			margin-left:0;
 		}
 		div#body{
-			margin-right:-100%;
+			margin-right:-200%;
 		}
 	}
 }
@@ -111,33 +171,63 @@ header[role=banner]{
 
 	header[role=banner] section{
 		nav{
-			float:right;
-			height:60px;
+			padding:0;
+			width:100%;
+
+			@include clearfix;
 
 			ul{
+				float:right;
 
 				li{
 					border-bottom:0 none;
 					float:left;
 
+					&:hover, &.active{
+						background:none;
+
+						a{
+							color:$orange;
+						}
+					}
+					&.active{
+						.triangle{
+							display:block;
+						}
+						ul{
+							display:none;
+						}
+					}
+					&.search{
+						display:block;
+
+						a{
+							padding:0;
+						}
+
+						i{
+							font-size:1em;
+						}
+					}
+
 					a{
 						display:table-cell;
-						font-size:2.2em;
-						height:40px;
-						padding:10px;
+						font-size:1.5em;
+						line-height:50px;
+						padding:0 10px;
 						text-align:center;
 						vertical-align:middle;
 
-						span{
-							display:block;
-							color:$gray_light;
-							font-size:0.8em;
-							text-transform:lowercase;
+						&:hover{
+							background:none;
 						}
 
-						&:hover{
-							background:#666;
-							color:#fff;
+						i{
+							font-size:0.7em;
+						}
+
+						span{
+							display:none;
 						}
 					}
 
@@ -146,26 +236,12 @@ header[role=banner]{
 					}
 
 					ul{
-						left:0;
-						position:absolute;
-						top:60px;
-						width:150px;
-
-						li{
-							display:block;
-							float:left;
-							padding:0;
-							position:relative;
-							width:100%;
-							
-							a{
-								display:block;
-								height:auto;
-								padding:10px 0;
-								text-align:left;
-							}
-						}
+						display:none;
 					}
+				}
+
+				form{
+					display:none;
 				}
 			}
 		}
@@ -175,18 +251,27 @@ header[role=banner]{
 @media only screen and (min-width: 768px) {
 	header[role=banner] section{
 		nav{
-			height:80px;
-
 			ul{
 
 				li{
 					a{
-						font-size:2.4em;
-						height:60px;
+						font-size:2.2em;
+						padding:0 15px;
 					}
+				}
+			}
+		}
+	}
+}
 
-					ul{
-						top:80px;
+@media only screen and (min-width: 900px) {
+	header[role=banner] section{
+		nav{
+			ul{
+
+				li{
+					a{
+						font-size:2.6em;
 					}
 				}
 			}
@@ -200,15 +285,8 @@ header[role=banner]{
 			ul{
 				li{
 					a{
-						font-size:3em;
-						padding:10px 20px;
-
-						span{
-							display:block;
-							color:$gray_medium;
-							font-size:0.6em;
-							text-transform:lowercase;
-						}
+						font-size:2.6em;
+						padding:0 20px;
 					}
 				}
 			}

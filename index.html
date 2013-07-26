@@ -21,54 +21,206 @@
         <aside>
             <div class="wrapper">
                 <a href="/" class="logo"><img src="images/logo.png" /></a>
-                <div id="search">
-                    <form method="post" action="/search">
-                        <input type="search" id="searchTerm" name="searchTerm" value="" title="search" placeholder="Search" />
-                        <a href="#" id="search-submit" class="icon-search"></a>
-                    </form>
-                    <div class="mobile-nav">
-                        <a href="#"><i></i><i></i><i></i></a>
-                    </div>
-                </div>
-                <ul id="top-nav">
-                    <li class="active live"><a href="#"><i class="icon-play-circle"></i>LIVE</a></li>
-                    <!--<li class="contact"><a href="#"><i class="icon-info-sign"></i>CONTACT</a></li>-->
-                    <li class="time"><a href="#"><i class="icon-group"></i>SUN @ 9AM&amp;11AM</a></li>
-                    <!--<li class="campus"><a href="#" class="pick">Pick Your Campus<i class="icon-chevron-down"></i></a></li>-->
+                <ul class="social">
+                    <li><a href="https://www.facebook.com/genesisthejourney" class="icon-facebook" target="_blank"></a></li>
+                    <li><a href="https://twitter.com/genesisboston" class="icon-twitter" target="_blank"></a></li>
+                    <li><a href="https://genesischurch.onthecity.org" class="icon-the-city" target="_blank"></a></li>
                 </ul>
-                <!--<ul id="campus">
-                    <li><a href="#">Woburn</a></li>
-                    <li><a href="#">Test Campus</a></li>
-                </ul>-->
+                <form method="post" action="/search">
+                    <input type="search" name="searchTerm" value="" title="search" placeholder="Search" />
+                    <a href="#" id="search-submit" class="icon-search"></a>
+                </form>
+
+                <ul class="top-nav">
+                    <!--<li><span class="service">Next Service in: </span></li>
+                    <li><div id="countdown"></div></li>-->
+                    <li><a href="#" class="live">Live</a></li>
+                    <li><a href="#">Directions</a></li>
+                    <li><a href="#">Give</a></li>
+                </ul>
+
+                <div class="mobile-nav">
+                    <a href="#"><i class="icon-arrow-right"></i></a>
+                </div>
             </div>
         </aside>
         <section>
             <div class="wrapper">
                 <nav>
                     <ul>
-                        <li class="icon-chevron-right"><a href="#">I Am New <span>What To Expect</span></a></li>
-                        <li class="icon-chevron-right"><a href="#">Grow <span>Sermons | Blog</span></a></li>
-                        <li class="icon-chevron-right"><a href="#">Loving God <span>Beliefs | Visions</span></a></li>
-                        <li class="icon-chevron-right"><a href="#">Loving People <span>Groups | Ministries</span></a>
+                        <li class="icon-chevron-right" data-nav="loving-god"><a href="#">Loving God <span>Beliefs | Visions</span><span class="triangle"></span></a>
+                            <ul>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Sermons</a></li>
+                            </ul>
+                        </li>
+                        <li class="icon-chevron-right" data-nav="loving-people"><a href="#">Loving People <span>Groups | Ministries</span><span class="triangle"></span></a>
                             <ul>
                                 <li><a href="#">Community Groups</a></li>
                                 <li><a href="#">Creative</a></li>
                                 <li><a href="#">Facilities</a></li>
+                                <li><a href="#">Kids</a></li>
+                                <li><a href="#">Prayer</a></li>
+                                <li><a href="#">Students</a></li>
                                 <li><a href="#">Worship</a></li>
-                                <li><a href="#">Youth</a></li>
                             </ul>
                         </li>
-                        
-                        <li class="icon-chevron-right"><a href="#">Give <span>Donate | Serve</span></a></li>
+                        <li class="icon-chevron-right" data-nav="grow"><a href="#">Sermons <span>Sermons | Blog</span><span class="triangle"></span></a>
+                            <ul>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Sermons</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="icon-chevron-right" data-nav="give"><a href="#">Be Generous <span>Donate | Serve</span><span class="triangle"></span></a>
+                            <ul>
+                                <li><a href="#">Time</a></li>
+                                <li><a href="#">Money</a></li>
+                            </ul>
+                        </li>
+                        <li class="icon-chevron-right" data-nav="visit"><a href="#">Learn More <span>About GENESIS</span><span class="triangle"></span></a>
+                            <ul>
+                                <li><a href="#">Location &amp; Directions</a></li>
+                                <li><a href="#">What to Expect</a></li>
+                                <li><a href="#">Worship</a></li>
+                                <li><a href="#">Get Connected</a></li>
+                                <li><a href="#">The GENESIS Story</a></li>
+                                <li><a href="#">Leadership</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="search" data-nav="search">
+                            <form method="post" action="/search">
+                                <input type="search" name="searchTerm" value="" title="search" placeholder="Search" />
+                                <a href="#" id="search-submit" class="icon-search"></a>
+                            </form>
+                            <a href="#"><i class="icon-search"></i><span class="triangle"></span></a>
+                        </li>
                     </ul>
-                    
+
+                    <div id="loving-people" class="fancy-nav">
+                        <h1>Community &amp; Ministries</h1>
+                        <div class="feature">
+                            <a href="#"><img src="images/pages/cg.jpg" /></a>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel tempor lectus. Aliquam libero magna, sodales nec consectetur sit amet, volutpat vel neque. Duis vulputate sagittis magna, a facilisis ipsum rutrum a.</p>
+                            <ul>
+                                <li><a href="#"><i class="icon-group"></i> Learn More About CG</a></li>
+                                <li><a href="#"><i class="icon-map-marker"></i> Find a CG Near You</a></li>
+                            </ul>
+                        </div>
+                        <div class="nav-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel tempor lectus. Aliquam libero magna, sodales nec consectetur sit amet, volutpat vel neque. Duis vulputate sagittis magna, a facilisis ipsum rutrum a.</p>
+
+                            <ul class="full">
+                                <li><a href="#">Community Groups</a></li>
+                                <li><a href="#">Creative</a></li>
+                                <li><a href="#">Facilities</a></li>
+                                <li><a href="#">Kids</a></li>
+                                <li><a href="#">Outreach</a></li>
+                                <li><a href="#">Prayer</a></li>
+                                <li><a href="#">Students</a></li>
+                                <li><a href="#">Worship</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="give" class="fancy-nav">
+                        <h1>Donate | Serve</h1>
+                        <div class="feature">
+                            <a href="#"><img src="images/hero/be-generous.jpg" /></a>
+                            <p>What would happen if we were as generous with our time, money, family, &amp; neighbors as God is with us? Would we see our lives, and the community around us, radically changed?</p>
+                            <ul>
+                                <li><a href="#"><i class="icon-play"></i> Be Generous Series</a></li>
+                            </ul>
+                        </div>
+                        <div class="nav-content">
+                            <p>Two ways we can be generous in our local church body is with our time &amp; money. Learn more about donating to GENESIS finacial gifts and serving the local body.</p>
+
+                            <ul class="full">
+                                <li><a href="#">Finacial</a></li>
+                                <li><a href="#">Serving</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="loving-god" class="fancy-nav">
+                        <h1>Beliefs &amp; Visions</h1>
+                        <div class="feature">
+                            <a href="#"><img src="images/gospel.jpg" /></a>
+                            <p>At Mars Hill, we believe that Jesus is God. We take him at his word. Because of this, everything we do is all about Jesus. We invite you to learn more about this man who is God and how you can find forgiveness and new life in him.</p>
+                            <ul>
+                                <li><a href="#"><i class="icon-bullhorn"></i> Our Beliefs &amp; Doctrine</a></li>
+                                <li><a href="#"><i class="icon-question-sign"></i> Ask a Question</a></li>
+                            </ul>
+                        </div>
+                        <div class="nav-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel tempor lectus. Aliquam libero magna, sodales nec consectetur sit amet, volutpat vel neque. Duis vulputate sagittis magna, a facilisis ipsum rutrum a.</p>
+
+                            <ul class="full">
+                                <li><a href="#">Church Planting</a></li>
+                                <li><a href="#">Doctrine</a></li>
+                                <li><a href="#">Mission</a></li>
+                                <li><a href="#">I Love The Church!</a></li>
+                                <li><a href="#">Get Drenched</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="grow" class="fancy-nav">
+                        <h1>Sermons | Blog | Media</h1>
+                        <div class="feature">
+                            <a href="#"><img src="images/hero/acts.jpg" /></a>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel tempor lectus. Aliquam libero magna, sodales nec consectetur sit amet, volutpat vel neque. Duis vulputate sagittis magna, a facilisis ipsum rutrum a.</p>
+                            <ul>
+                                <li><a href="#"><i class="icon-play"></i> Watch Latest Sermon</a></li>
+                            </ul>
+                        </div>
+                        <div class="nav-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel tempor lectus. Aliquam libero magna, sodales nec consectetur sit amet, volutpat vel neque. Duis vulputate sagittis magna, a facilisis ipsum rutrum a.</p>
+
+                            <ul class="full">
+                                <li><a href="#">Sermons</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Other Media</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="visit" class="fancy-nav">
+                        <h1>About GENESIS</h1>
+                        <div class="feature">
+                            <a href="#"><img src="images/hero/acts.jpg" /></a>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel tempor lectus. Aliquam libero magna, sodales nec consectetur sit amet, volutpat vel neque. Duis vulputate sagittis magna, a facilisis ipsum rutrum a.</p>
+                            <ul>
+                                <li><a href="#"><i class="icon-play"></i> Watch Latest Sermon</a></li>
+                            </ul>
+                        </div>
+                        <div class="nav-content">
+                            <ul class="full">
+                                <li><a href="#">Location &amp; Directions</a></li>
+                                <li><a href="#">What to Expect</a></li>
+                                <li><a href="#">Worship</a></li>
+                                <li><a href="#">Get Connected</a></li>
+                                <li><a href="#">The GENESIS Story</a></li>
+                                <li><a href="#">Leadership</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="search" class="fancy-nav">
+                        <form method="post" action="/search">
+                            <input type="search" name="searchTerm" value="" title="search" placeholder="Search" />
+                            <a href="#" id="search-submit" class="icon-search"></a>
+                        </form>
+                    </div>
+
                 </nav>
             </div>
         </section>
     </header>
     <div id="body">
         <div class="mobile-nav">
-            <a href="#"><i></i><i></i><i></i></a>
+            <a href="#"><hr /><hr /><hr /></a>
             <h1>GENESIS</h1>
         </div>
         <div id="hero">
@@ -94,62 +246,113 @@
                 <article class="short">
                     <header>
                         <a href="#"><img src="images/hero/acts.jpg" /></a>
-                        <a href="#">Long blog post about something with Acts series</a>
-                        <time>March 30, 2013</time>
+                        <h1><a href="#">Long blog post about something with Acts series</a></h1>
+                        <time><i class="icon-calendar"></i> March 30, 2013</time>
                     </header>
                 </article>
                 <article class="short">
                     <header>
                         <a href="#"><img src="images/hero/acts.jpg" /></a>
-                        <a href="#">Long blog post about something with Acts series</a>
-                        <time>March 30, 2013</time>
+                        <h1><a href="#">Long blog post about something with Acts series</a></h1>
+                        <time><i class="icon-calendar"></i> March 30, 2013</time>
                     </header>
                 </article>
                 <article class="short">
                     <header>
                         <a href="#"><img src="images/hero/acts.jpg" /></a>
-                        <a href="#">Long blog post about something with Acts series</a>
-                        <time>March 30, 2013</time>
+                        <h1><a href="#">Long blog post about something with Acts series</a></h1>
+                        <time><i class="icon-calendar"></i> March 30, 2013</time>
                     </header>
                 </article>
                 <article class="short">
                     <header>
                         <a href="#"><img src="images/hero/acts.jpg" /></a>
-                        <a href="#">Long blog post about something with Acts series</a>
-                        <time>March 30, 2013</time>
+                        <h1><a href="#">Long blog post about something with Acts series</a></h1>
+                        <time><i class="icon-calendar"></i> March 30, 2013</time>
                     </header>
                 </article>
                 <article class="short">
                     <header>
                         <a href="#"><img src="images/hero/acts.jpg" /></a>
-                        <a href="#">Long blog post about something with Acts series</a>
-                        <time>March 30, 2013</time>
+                        <h1><a href="#">Long blog post about something with Acts series</a></h1>
+                        <time><i class="icon-calendar"></i> March 30, 2013</time>
                     </header>
                 </article>
+                <article class="short">
+                    <header>
+                        <a href="#"><img src="images/hero/acts.jpg" /></a>
+                        <h1><a href="#">Long blog post about something with Acts series</a></h1>
+                        <time><i class="icon-calendar"></i> March 30, 2013</time>
+                    </header>
+                </article>
+            </div>
+
+            <div class="sidebar">
+                <section>
+                    <h2><i class="icon-the-city"></i> Events</h2>
+                    <ul>
+                        <li class="current"><a href="#" class="current">GENESIS</a>
+                            <ul>
+                                <li><i class="icon-calendar"></i> June 2, 2013</li>
+                                <li><i class="icon-time"></i> 10am - 11:30am</li>
+                            </ul>
+                        </li>
+                        <li class="current"><a href="#" class="current">GENESIS</a>
+                            <ul>
+                                <li><i class="icon-calendar"></i> June 2, 2013</li>
+                                <li><i class="icon-time"></i> 10am - 11:30am</li>
+                            </ul>
+                        </li>
+                        <li class="current"><a href="#" class="current">GENESIS</a>
+                            <ul>
+                                <li><i class="icon-calendar"></i> June 2, 2013</li>
+                                <li><i class="icon-time"></i> 10am - 11:30am</li>
+                            </ul>
+                        </li>
+                        <li class="current"><a href="#" class="current">GENESIS</a>
+                            <ul>
+                                <li><i class="icon-calendar"></i> June 2, 2013</li>
+                                <li><i class="icon-time"></i> 10am - 11:30am</li>
+                            </ul>
+                        </li>
+                        <li class="current"><a href="#" class="current">GENESIS</a>
+                            <ul>
+                                <li><i class="icon-calendar"></i> June 2, 2013</li>
+                                <li><i class="icon-time"></i> 10am - 11:30am</li>
+                            </ul>
+                        </li>
+                        <li class="current"><a href="#" class="current">GENESIS</a>
+                            <ul>
+                                <li><i class="icon-calendar"></i> June 2, 2013</li>
+                                <li><i class="icon-time"></i> 10am - 11:30am</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
             </div>
         </section>
         <footer role="contentinfo">
-            <div class="wrapper">
-
-                <p class="location"><a href="http://maps.google.com/maps?daddr=16+Wheeling+Ave,+Woburn,+Massachusetts+01801" target="_blank"><i class="icon-map-marker"></i><span>16 Wheeling Ave<br />Woburn, MA 01801</span></a></p>
-
-                <ul class="social">
-                    <li><a href="#" class="city"><img src="layout/images/the-city.png" alt="The City" /></a></li>
-                    <li><a href="#" class="facebook"><img src="layout/images/facebook.png" alt="The City" /></a></li>
-                    <li><a href="#" class="twitter"><img src="layout/images/twitter.png" alt="The City" /></a></li>
-                    <li><a href="#" class="google"><img src="layout/images/google+.png" alt="The City" /></a></li>
-                </ul>
-
-
-            	<div class="copyright">
-                    <p>&copy; 2012 GENESIS Church. All Rights Reserved. <a href="mailto:begin@genesisthejourney.com" class="email-connect">begin@genesisthejourney.com</a></p>
-                    <span>design &amp; develop by <a href="#" target="_blank">relevant creativity</a></span>
+            <section class="tagline"><div class="wrapper"><span>begin.</span><span>belong.</span><span>believe.</span></div></section>
+            <section>
+                <div class="wrapper">
+                    <p><strong>Service Time</strong>Sunday 10:00am</p>
+                    <p class="location">
+                        <strong>Location</strong>
+                        <a href="http://maps.google.com/maps?daddr=35+Olympia+Ave,+Woburn,+Massachusetts+01801" target="_blank">35 Olympia Ave, Woburn, MA 01801</a>
+                    </p>
+                    <p><strong>Connect</strong><a href="#">begin@genesisthejourney.com</a></p>
                 </div>
-            </div>
+            </section>
+
+            <section class="copyright">
+                <div class="wrapper">
+                    <p>&copy; 2007 - 2013 GENESIS Community Church. All Rights Reserved.</p>
+                </div>
+            </section>
         </footer>
     </div>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="layout/js/jquery-1.8.1.min.js"><\/script>')</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="layout/js/jquery-1.8.3.min.js"><\/script>')</script>
     <script src="layout/js/plugins.js"></script>
     <script src="layout/js/script.js"></script>
     <script>

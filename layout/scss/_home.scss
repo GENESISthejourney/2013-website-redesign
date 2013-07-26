@@ -1,5 +1,85 @@
 #home{
 	section[role=main]{
-	    margin:0 auto;
+
+	    @include clearfix;
+
+	    .blog{
+	    	width:100%;
+	    }
+
+	    .sidebar{
+	    	margin-top:0;
+	    	width:100%;
+	    	section{
+	    		background:$green;
+
+	    		h2{
+	    			margin-bottom:-3px;
+	    		}
+	    	}
+	    	ul{
+	    		li a.current{
+	    			background:$gray_medium;
+
+	    			&:hover{
+	    				background:$orange;
+	    			}
+	    		}
+	    	}
+	    }
+	}
+}
+
+@media only screen and (min-width: 600px) {
+	#home{
+		section[role=main]{
+			.blog{
+		    	article{
+		    		float:left;
+		    		width:47.5%;
+
+		    		&:nth-child(odd){
+		    			margin-right:5%;
+		    		}
+		    	}
+		    }
+		}
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	#home{
+		section[role=main]{
+		    .blog{
+		    	float:left;
+		    	width:55%;
+
+		    	article{
+		    		float:left;
+		    		width:47.5%;
+
+		    		&:nth-child(odd){
+		    			margin-right:5%;
+		    		}
+		    	}
+		    }
+		    .sidebar{
+		    	float:right;
+		    	width:40%;
+		    }
+		}
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	#home{
+		section[role=main]{
+		    .blog{
+		    	width:65%;
+		    }
+		    .sidebar{
+		    	width:30%;
+		    }
+		}
 	}
 }
