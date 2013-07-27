@@ -11,9 +11,9 @@ header[role=banner]{
 				padding:0;
 
 				li{
-					border-bottom:1px solid #ccc;
+					border-bottom:1px solid $gray_light;
 					display:block;
-					position:static;
+					position:relative;
 
 					&:before{
 						color:$gray_dark;
@@ -23,9 +23,10 @@ header[role=banner]{
 						top:10px;
 					}
 
-					&:hover, &.current, &.currentParent, &.active{
-						background:#ccc;
+					&:hover, &.current, &.currentParent{
+						background:$gray_soft;
 					}
+
 					&.search{
 						display:none;
 					}
@@ -60,20 +61,18 @@ header[role=banner]{
 
 
 					ul{
-						background:#ccc;
-						border-top:1px solid #eee;
+						background:$white;
+						border-left:5px solid $orange;
+						border-top:1px solid $orange;
 						display:none;
 
 						li{
-							border-bottom:1px solid #eee;
+							border-bottom:1px solid $gray_light;
+							padding:0;
 							text-indent:10px;
 
-							&:hover, &.current, &.currentParent, &.active{
-								background:#ddd;
-							}
-
 							a{
-								font-size:1.2em;
+								color:$orange;
 								text-transform:uppercase;
 							}
 
@@ -84,8 +83,28 @@ header[role=banner]{
 					}
 
 					&.active{
+						background:$orange;
+
+						a{
+							color:$white;
+						}
+
 						ul{
 							display:block;
+
+							li{
+								a{
+									color:$orange;
+								}
+
+								&:hover, &.current, &.currentParent{
+									background:none;
+									a{
+										background:$gray_soft;
+										color:$orange;
+									}
+								}
+							}
 						}
 					}
 				}
@@ -231,7 +250,7 @@ header[role=banner]{
 						}
 					}
 
-					&.icon-chevron-right:before,&.icon-chevron-down:before{
+					&.icon-plus:before,&.icon-minus:before{
 						display:none;
 					}
 
