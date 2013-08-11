@@ -24,6 +24,8 @@ hr {
 
 div.wrapper, section[role=main]{
 	margin:0 auto;
+
+    @include clearfix;
 }
 
 section[role=main]{

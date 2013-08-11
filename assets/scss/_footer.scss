@@ -1,21 +1,22 @@
 footer[role=contentinfo]{
 	margin:20px 0 0 0;
 
-	div.wrapper{
-		padding:10px;
-	}
-
 	section{
 		color:$white;
-		padding:10px;
+		padding:20px;
 		text-align:center;
 
 		@include background-image(linear-gradient($orange 0, $orange_dark 100%));
 
 		p{
 			font-size:2em;
+			margin:20px 0 0 0;
 			padding:0 10px;
 			word-wrap:break-word;
+
+			&:first-of-type{
+				margin:0;
+			}
 
 			strong{
 				display:block;
@@ -48,6 +49,11 @@ footer[role=contentinfo]{
 		&.copyright{
 			background:$white;
 			color:$body_color;
+
+			p{
+				margin:0;
+				padding:0;
+			}
 		}
 	}
 }
@@ -61,6 +67,7 @@ footer[role=contentinfo]{
   		p{
 				float:left;
 				font-size:1.8em;
+				margin:0;
 				width:33.333%;
 
 				@include box-sizing(border-box);
