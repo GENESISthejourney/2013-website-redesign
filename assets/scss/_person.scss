@@ -1,0 +1,74 @@
+.person{
+  border-top:1px solid $gray_medium;
+  padding:20px 0;
+  width:100%;
+
+  img{
+    border-radius:5px;
+    max-width:100%;
+  }
+  div.text{
+    text-align:center;
+  }
+  h3{
+    color:$gray_dark;
+    font-family:$condensed_font_family;
+    text-transform:none;
+
+    span{
+      font-weight:bold;
+      text-transform:lowercase;
+    }
+  }
+
+  ul{
+    list-style:none;
+    margin:10px 0 0 0;
+    padding:0;
+
+    li{
+      display:inline-block;
+      margin:0 5px;
+      padding:0;
+      text-align:center;
+
+      a{
+        border:3px solid $orange;
+        border-radius:20px;
+        color:$orange;
+        display:block;
+        font-size:1.6em;
+        height:30px;
+        line-height:1;
+        padding:5px 0 0 0;
+        width:35px;
+
+        &:hover{
+          background:$orange;
+          color:$white;
+        }
+
+        &.icon-the-city{
+          font-size:1.3em;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .person{
+    display:table;
+    div.img{
+      display:table-cell;
+      padding:0 5% 0 0;
+      width:30%;
+    }
+    div.text{
+      display:table-cell;
+      text-align:left;
+      vertical-align:middle;
+      width:65%;
+    }
+  }
+}

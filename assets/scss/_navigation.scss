@@ -197,6 +197,7 @@ header[role=banner]{
 
 			ul{
 				float:right;
+				margin:0 20px 0 0;
 
 				li{
 					border-bottom:0 none;
@@ -302,6 +303,7 @@ header[role=banner]{
 	header[role=banner] section{
 		nav{
 			ul{
+				margin:0;
 				li{
 					a{
 						font-size:2.6em;

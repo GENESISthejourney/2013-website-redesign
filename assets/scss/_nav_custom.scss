@@ -20,6 +20,7 @@ header[role=banner]{
 			color:$white;
 			padding:0 0 10px 0;
 			text-align:right;
+			text-transform:uppercase;
 		}
 
 		p{
@@ -86,22 +87,12 @@ header[role=banner]{
 				li{
 					border-bottom:1px solid $gray_light;
 					padding:5px 0;
-					width:50%;
+					width:100%;
 
 					a{
 						display:block;
 						padding:0;
 						text-align:center;
-					}
-
-					&.full{
-						width:100%;
-					}
-				}
-
-				&.full{
-					li{
-						width:100%;
 					}
 				}
 			}
@@ -113,7 +104,7 @@ header[role=banner]{
 	header[role=banner]{
 		.fancy-nav{
 			width:65%;
-			
+
 			.feature{
 				float:left;
 				width:40%;

@@ -74,5 +74,11 @@
 			e.stopPropagation();
 		});
 
+		$('a.submit').click(function(e){
+			e.stopPropagation();
+			$(e.target).parents('form').submit();
+			return false;
+		});
+
     });
 })(jQuery);

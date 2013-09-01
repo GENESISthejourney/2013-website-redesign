@@ -37,7 +37,7 @@ p{
 
 h1, h2, h3, h4, h5, h6{
 	color:$orange;
-	font-family:$heading_font_family;
+	font-family:$condensed_font_family;
 	font-weight:normal;
 	line-height:0.8;
 	text-transform:uppercase;
@@ -82,57 +82,65 @@ h6{
 }
 
 blockquote{
-	border-bottom:1px solid $orange;
-	border-top:1px solid $orange;
+	background:$white;
+	border:1px solid $gray_medium;
+	border-radius:5px;
 	font-style:italic;
-	margin:1em 0;
-	padding:10px 20px;
+	margin:2em 0;
+	padding:10px;
 	position:relative;
 
 	&:before{
-		background:$gray_soft;
-		color:$orange;
-		content:'“';
-		font-size:3em;
-		font-family:Georgia, serif;
-		left:0;
-		padding:0 10px 0 0;
-		position:absolute;
-		top:-16px;
+		color:$gray_soft;
+		content:"\f10d";
+		display:block;
+		font-size:2em;
+		font-family:FontAwesome;
+		height:0;
+		width:0;
 	}
 
 	footer{
-		background:$gray_soft;
-		bottom:-13px;
 		color:$orange;
 		font-family:$heading_font_family;
-		font-size:1.6em;
+		font-size:1.4em;
 		font-style:normal;
-		padding:0 0 0 10px;
-		position:absolute;
-		right:0;
+		text-align:right;
 		text-transform:uppercase;
 	}
+}
+
+.lower{
+	text-transform:lowercase;
+}
+
+.notice{
+	color:$gray_medium;
+	font-size:0.8em;
+}
+
+input{
+	@include box-sizing(border-box);
 }
 
 
 @media only screen and (min-width: 1024px) {
 	h1{
-		font-size:2.8em;
+		font-size:4em;
 	}
 	h2{
-		font-size:2.4em;
+		font-size:3em;
 	}
 	h3{
-		font-size:2em;
+		font-size:2.6em;
 	}
 	h4{
-		font-size:1.8em;
+		font-size:2.2em;
 	}
 	h5{
-		font-size:1.4em;
+		font-size:2em;
 	}
 	h6{
-		font-size:1.2em;
+		font-size:1.8em;
 	}
 }

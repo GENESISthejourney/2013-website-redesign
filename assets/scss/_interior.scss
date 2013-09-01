@@ -12,8 +12,33 @@ section[role=main]{
 		}
 	}
 
+  header.header-video{
+    height:0;
+    overflow:hidden;
+    padding:0 0 56.25% 0;
+    position:relative;
+
+    iframe{
+      height:100%;
+      left:0;
+      position:absolute;
+      top:0;
+      width:100%;
+    }
+  }
+
+  .content-full, .content-half, .content-split, .content-split-sm{
+    margin:20px 0;
+    width:100%;
+    @include clearfix;
+  }
+
 	.sidebar{
 		font-family:$condensed_font_family;
+
+    img{
+      max-width:100%;
+    }
 
 		section{
 			background:$gray_medium;
@@ -21,9 +46,10 @@ section[role=main]{
 
 			h2{
 				color:$white;
+        font-size:1.8em;
 				text-align:center;
-
-				font-family:$condensed_font_family;
+        text-transform:uppercase;
+        font-family:$condensed_font_family;
 			}
 
 			a.view-all{
@@ -116,46 +142,84 @@ section[role=main]{
 	}
 }
 
+#no-overlap{
+  .sidebar{
+    margin-top:0;
+    margin-right:0;
+  }
+}
+
 @media only screen and (min-width: 600px) {
-    section[role=main]{
-        
-        .content-left{
-        	float:left;
-        	width:60%;
-        }
-
-        .sidebar{
-        	float:right;
-        	margin:-30px 20px 0 0;
-        	width:30%;
-
-        	section{
-        		border-radius:5px;
-        	}
-
-        	ul.ads{
-        		li{
-        			float:none;
-        			margin:0;
-        			width:100%;
-        		}
-        	}
-        }
+  section[role=main]{
+    .content-full, .content-left, .sidebar{
+      &.no-img{
+        margin:25px 0 0 0;
+      }
     }
+    .content-left{
+    	float:left;
+    	width:60%;
+    }
+    .content-half{
+      float:left;
+      width:45%;
+
+      &.right{
+        float:right;
+      }
+    }
+
+    .content-split{
+      float:right;
+      width:60%;
+    }
+
+    .content-split-sm{
+      float:left;
+      width:30%;
+    }
+
+    .sidebar{
+    	float:right;
+    	margin:-30px 20px 0 0;
+    	width:30%;
+
+    	section{
+    		border-radius:5px;
+    	}
+
+    	ul.ads{
+    		li{
+    			float:none;
+    			margin:0;
+    			width:100%;
+    		}
+    	}
+    }
+  }
 }
 
 @media only screen and (min-width: 800px) {
-    section[role=main]{
-        
-        .content-left{
-        	width:65%;
-        }
-
-        .sidebar{
-        	margin-top:-60px;
-        	width:25%;
-        }
+  section[role=main]{
+    .content-left{
+    	width:65%;
     }
+
+    .sidebar{
+    	margin-top:-60px;
+    	width:25%;
+    }
+
+    .content-split{
+      float:right;
+      width:55%;
+    }
+
+    .content-split-sm{
+      float:left;
+      width:35%;
+    }
+  }
 }
 
 
@@ -165,6 +229,10 @@ section[role=main]{
 
         .sidebar{
         	margin-top:-100px;
+
+          section h2{
+            font-size:2.4em;
+          }
         }
     }
 }

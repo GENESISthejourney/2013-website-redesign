@@ -3,7 +3,7 @@
 */
 
 @import 'reset';
-@import 'font-awesome';
+@import 'font-awesome/font-awesome';
 @import 'city';
 @import 'bourbon/bourbon';
 
@@ -71,6 +71,11 @@ $heading_font_family: "minion-pro", serif;
 @import 'blog';
 
 @import 'hero';
+@import 'person';
+@import 'song';
+@import 'forms';
+@import 'tab';
+
 @import 'print';
 
 

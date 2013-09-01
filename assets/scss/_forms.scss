@@ -1,0 +1,80 @@
+form{
+
+}
+
+form.login{
+  background:rgba(255, 255, 255, 0.6);
+  border-top:5px solid $orange;
+  font-size:1.6em;
+  padding:20px;
+  width:100%;
+
+  @include box-sizing(border-box);
+
+  div.row{
+    display:table;
+    margin:10px 0;
+    width:100%;
+
+    label{
+      background:$orange;
+      border-radius:5px 0 0 5px;
+      color:$white;
+      display:table-cell;
+      text-align:center;
+      width:15%;
+    }
+
+    span{
+      display:table-cell;
+      width:85%;
+
+      &.password{
+        width:70%;
+      }
+    }
+
+    input[type=text]{
+      border:0 none;
+      border-radius:0 5px 5px 0;
+      text-align:center;
+      width:100%;
+    }
+
+    input[type=password]{
+      border:0 none;
+      text-align:center;
+      width:100%;
+    }
+
+    a.submit{
+      background:$green;
+      border-radius:0 5px 5px 0;
+      color:$white;
+      display:table-cell;
+      text-align:center;
+      width:15%;
+    }
+  }
+}
+
+
+@media only screen and (min-width: 500px) {
+  form.login{
+    margin:0 auto;
+    width:500px;
+
+    div.row{
+      label{
+        width:10%;
+      }
+      span{
+        width:90%;
+
+        &.password{
+          width:75%;
+        }
+      }
+    }
+  }
+}
