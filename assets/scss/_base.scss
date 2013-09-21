@@ -10,14 +10,14 @@ a{
 
 	&.button{
 		background:$orange;
-		border-radius:5px;
+		border-radius:2px;
 		color:$white;
-		display:inline-block;
+		display:block;
 		line-height:1;
-		padding:5px 10px;
+		padding:10px 20px;
 
 		&:hover{
-			background:$orange_dark;
+			background:$green;
 			text-decoration:none;
 		}
 
@@ -59,6 +59,11 @@ h1, h2, h3, h4, h5, h6{
 	&.subtitle{
 		color:$gray_medium;
 		text-transform:lowercase;
+	}
+
+	span{
+		color:$gray_medium;
+		font-size:0.6em;
 	}
 }
 

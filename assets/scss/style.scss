@@ -21,6 +21,9 @@ $gray_soft:#eee;
 
 $white:#fff;
 
+$facebook:#305c9a;
+$twitter:#17b5ea;
+
 
 
 $body_color: $gray_dark;
@@ -76,6 +79,8 @@ $heading_font_family: "minion-pro", serif;
 @import 'forms';
 @import 'tab';
 @import 'share';
+
+@import 'cg';
 
 @import 'print';
 

@@ -61,14 +61,20 @@ header[role=banner]{
 
 					a{
 						background:$orange;
-						border-radius:5px;
+						border-radius:2px;
 						color:$white;
+						display:block;
 						font-size:1.8em;
-						padding:5px 10px;
+						padding:10px;
 						text-align:left;
 
 						&:hover{
-							background:$orange_dark;
+							background:$green;
+						}
+
+						i{
+							font-size:1em;
+							padding:0 10px 0 0;
 						}
 					}
 				}

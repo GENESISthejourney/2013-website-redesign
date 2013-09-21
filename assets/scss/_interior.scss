@@ -27,10 +27,27 @@ section[role=main]{
     }
   }
 
-  .content-full, .content-half, .content-split, .content-split-sm{
+  .content-full, .content-left, .content-half, .content-split, .content-split-sm{
     margin:20px 0;
     width:100%;
     @include clearfix;
+  }
+
+  .main-text{
+    ul{
+      list-style:none;
+      padding:0 0 0 20px;
+
+      li{
+        &:before{
+          color:$gray_light;
+          content:"\f10c";
+          font-family:'FontAwesome';
+          font-size:0.7em;
+          padding-right:10px;
+        }
+      }
+    }
   }
 
 	.sidebar{

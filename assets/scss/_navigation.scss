@@ -203,7 +203,7 @@ header[role=banner]{
 					border-bottom:0 none;
 					float:left;
 
-					&:hover, &.active{
+					&:hover, &.active, &.current, &.currentParent{
 						background:none;
 
 						a{
