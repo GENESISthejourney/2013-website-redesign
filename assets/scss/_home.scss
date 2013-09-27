@@ -60,13 +60,18 @@
             margin-bottom:-3px;
           }
         }
-        ul{
-          li a.current{
+        ul#city-events{
+          li a{
             background:$gray_medium;
+            color:$white;
 
             &:hover{
               background:$orange;
             }
+          }
+
+          ul li{
+            padding: 5px 10px;
           }
         }
       }
@@ -111,16 +116,6 @@
           }
         }
       }
-      .blog{
-        article{
-          float:left;
-          width:47.5%;
-
-          &:nth-child(odd){
-            margin-right:5%;
-          }
-        }
-      }
     }
   }
 }
@@ -132,14 +127,6 @@
       .content{
         float:left;
         width:55%;
-      }
-      .blog article{
-        float:left;
-        width:47.5%;
-
-        &:nth-child(odd){
-          margin-right:5%;
-        }
       }
       .sidebar{
         float:right;
