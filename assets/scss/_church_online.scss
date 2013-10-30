@@ -1,0 +1,94 @@
+#churchonline_counter {
+  display:none;
+  overflow:auto;
+  padding:0;
+
+  .tagline, .live{
+    color:rgba(255, 255, 255, 0.9);
+    display:inline-block;
+    font-family:$condensed_font_family;
+    font-size:1.4em;
+    line-height:39px;
+    text-transform:uppercase;
+    padding:0 20px;
+    position:relative;
+  }
+  .live{
+    display:none;
+    font-weight:bold;
+    padding:8px 20px 9px 0;
+
+    a{
+      border:0 none;
+      font-size:1em;
+      line-height:1;
+      margin:0;
+      padding:0;
+      text-transform:uppercase;
+
+      @include transition(none);
+
+      &:hover{
+        background:none;
+        color:$white;
+      }
+    }
+  }
+
+  .description, .time li .label {
+    bottom:0;
+    color:$gray_medium;
+    font-size: 0.6em;
+    left:0;
+    position:absolute;
+    text-align:center;
+    width:100%;
+  }
+  .time {
+    display:inline-block;
+    float:right;
+    list-style:none;
+    padding:2px 0 0 0;
+    margin:0;
+  }
+  .time li {
+    border:0 none;
+    float: left;
+    margin: 0 5px;
+    position:relative;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    span {
+      font-size: 1.2em;
+
+      &.days, &.hours, &.minutes, &.seconds{
+        background:#cbcbcb;
+        background-size:10px 15px;
+        border-radius:2px;
+        color:$gray_dark;
+        display:inline-block;
+        font-size:1.8em;
+        height:30px;
+        line-height:30px;
+        text-align: center;
+        width:28px;
+
+        @include background-image(linear-gradient(#cbcbcb 0, #f1f1f1 100%));
+      }
+    }
+  }
+}
+
+
+
+@media only screen and (min-width: 600px) {
+  #churchonline_counter {
+    .tagline, .live{
+      font-size:1.8em;
+      line-height:35px;
+    }
+  }
+}

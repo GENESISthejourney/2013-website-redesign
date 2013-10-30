@@ -180,9 +180,16 @@ header[role=banner]{
 					}
 					&.share-facebook{
 						background:$facebook;
+
+						&:hover{
+							background:$facebook_hover;
+						}
 					}
 					&.share-twitter{
 						background:$twitter;
+						&:hover{
+							background:$twitter_hover;
+						}
 					}
 				}
 				&.text{
@@ -222,8 +229,8 @@ header[role=banner]{
 						padding:0 5px 0 0;
 					}
 				}
-				&:hover, &.current, &.currentParent, &.active{
-					background:#ccc;
+				&.current a, &.currentParent a, &.active a, a:hover{
+					background:#666;
 				}
 				&:before{
 					color:$gray_dark;
@@ -231,6 +238,11 @@ header[role=banner]{
 					position:absolute;
 					right:10px;
 					top:10px;
+				}
+
+				&.live{
+					background:$gray_dark;
+					height:39px;
 				}
 			}
 		}
@@ -333,9 +345,13 @@ header[role=banner]{
 							color:$orange;
 						}
 
-						&.live{
-							@include animation(liveFlash 2.0s ease-in-out infinite);
+						&.first{
+							border-left:1px solid rgba(255, 255, 255, 0.7);
 						}
+					}
+					&.live{
+						background:none;
+						height:auto;
 					}
 				}
 			}

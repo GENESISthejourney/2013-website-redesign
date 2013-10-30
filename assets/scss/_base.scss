@@ -21,6 +21,17 @@ a{
 			text-decoration:none;
 		}
 
+		&.white{
+			background:$white;
+			color:$orange;
+
+			&:hover{
+				background:$orange;
+				color:$white;
+				text-decoration:none;
+			}
+		}
+
 		&.inline{
 			display:inline-block;
 		}

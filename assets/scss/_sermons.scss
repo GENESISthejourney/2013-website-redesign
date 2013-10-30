@@ -1,4 +1,14 @@
-.sermons{
+section[role=main] .sermons{
+	header{
+		h1{
+			margin-bottom:0;
+		}
+		h5.subtitle{
+			font-size:1.6em;
+			margin-top:0;
+			text-transform:none;
+		}
+	}
 	h1{
 		span{
 			color:$gray_medium;

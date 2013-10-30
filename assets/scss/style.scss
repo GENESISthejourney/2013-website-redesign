@@ -22,7 +22,9 @@ $gray_soft:#eee;
 $white:#fff;
 
 $facebook:#305c9a;
+$facebook_hover:#597dae;
 $twitter:#17b5ea;
+$twitter_hover:#45c4ee;
 
 
 
@@ -65,13 +67,14 @@ $heading_font_family: "minion-pro", serif;
 @import 'navigation';
 @import 'nav_custom';
 @import 'footer';
-@import 'countdown';
+@import 'church_online';
 
 @import 'home';
 @import 'interior';
 
 @import 'sermons';
 @import 'blog';
+@import 'pagination';
 
 @import 'hero';
 @import 'person';
