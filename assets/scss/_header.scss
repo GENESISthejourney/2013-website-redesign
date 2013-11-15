@@ -67,7 +67,7 @@ header[role=banner]{
 		z-index:3;
 
 		img{
-			width:150px;
+			width:125px;
 		}
 	}
 
@@ -368,6 +368,16 @@ header[role=banner]{
 			z-index:1;
 
 			@include clearfix;
+		}
+	}
+}
+
+@media only screen and (min-width: 650px) {
+	header[role=banner]{
+		a.logo{
+			img{
+				width:150px;
+			}
 		}
 	}
 }
