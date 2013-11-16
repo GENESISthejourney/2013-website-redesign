@@ -1,6 +1,7 @@
 .cg{
-  a.image{
+  .image{
     display:block;
+    text-align:center;
 
     img{
       border:5px solid $white;
@@ -35,6 +36,7 @@
   }
 
   #map{
+    clear:both;
     height:200px;
     margin:20px;
     width:100%;
@@ -47,6 +49,36 @@
     margin:20px 0;
     padding:20px;
     position:relative;
+
+    h1, h4{
+      color:$white;
+    }
+
+    .signup{
+      display:block;
+    }
+
+    .followup{
+      .success, .error{
+        display:none;
+      }
+
+      &.success{
+        .success{
+          display:block;
+        }
+      }
+      &.error{
+        .error{
+          display:block;
+        }
+      }
+
+      a{
+        color:$white;
+        text-decoration:underline;
+      }
+    }
 
     a.close{
       background:$gray_dark;
@@ -97,6 +129,10 @@
 .cgs .cg{
   margin:20px 0;
   text-align:center;
+
+  a.image{
+    padding:0 0 10px 0;
+  }
 
   ul{
     li{
@@ -151,10 +187,15 @@
 @media only screen and (min-width:800px) {
   .cgs .cg{
     a.image{
-      padding:0 20px;
+      padding:0 20px 10px 20px;
     }
   }
   .cg{
+    .image{
+      float:left;
+      padding:20px 30px 20px 0;
+      text-align:left;
+    }
     ul{
       li{
         margin:0;

@@ -22,8 +22,6 @@
 			return false;
 		});
 
-
-
 		$('header[role=banner] nav ul:first').find('a').click(function(e){
 			e.stopPropagation();
 			var fancyNav = false;
