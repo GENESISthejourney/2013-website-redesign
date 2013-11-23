@@ -51,7 +51,7 @@
 			return false;
 		});
 
-		$('a[href="#"]').click(function(){
+		$('a[href="#"]:not(.override)').click(function(){
 			return false;
 		});
 

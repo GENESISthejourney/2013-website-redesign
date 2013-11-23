@@ -15,6 +15,42 @@
 			position:relative;
 			width:100%;
 
+			div.overlay{
+				background:rgba(0, 0, 0, 0.5);
+				display:table;
+				height:100%;
+				left:0;
+				position:absolute;
+				top:0;
+				width:100%;
+				z-index:2;
+
+				div{
+					display:table-cell;
+					font-size:3em;
+					text-align:center;
+					vertical-align:middle;
+
+					h1, h5, h6{
+						color:$white;
+						margin:10px 0;
+						text-shadow:1px 1px 3px $gray_dark;
+					}
+
+					h1, h5{
+						display:none;
+					}
+
+					h6{
+						font-size:0.8em;
+					}
+
+					a.button{
+						box-shadow:1px 1px 3px 0 $gray_dark;
+					}
+				}
+			}
+
 			img{
 				max-width:100%;
 				position:relative;
@@ -83,6 +119,14 @@
 @media only screen and (min-width: 600px) {
 	#hero{
 		padding:0 0 75px 0;
+
+		.cycle-slideshow{
+			li div.overlay div{
+				h1, h5{
+					display:block;
+				}
+			}
+		}
 
 		#hero-pager{
 			display:block;
