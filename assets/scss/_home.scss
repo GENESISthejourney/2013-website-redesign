@@ -1,121 +1,53 @@
 #home{
   section[role=main]{
+    @include clearfix;
 
-      @include clearfix;
+    .content{
+      width:100%;
+    }
 
-      .content{
-        width:100%;
-      }
-
-      .recent-sermon{
-        background:$orange;
-        border-radius:5px;
-        color:$white;
-        margin:0 0 20px 0;
-        padding:5px;
-        width:100%;
-
-        @include box-sizing(border-box);
+    .sidebar{
+      margin-top:0;
+      width:100%;
+      section{
+        background:$green;
 
         h2{
-          color:white;
-          font-size:1.4em;
-          margin:5px 0;
-        }
-
-        p{
-          margin:5px 0;
-        }
-
-        a{
-          display:block;
-          img{
-            max-width:100%;
-          }
-        }
-        ul{
-          list-style:none;
-          margin:0;
-          padding:0;
-
-          li{
-            display:inline;
-
-            a{
-              background:$white;
-              color:$orange;
-              display:inline-block;
-            }
-          }
+          margin-bottom:-3px;
         }
       }
+      ul#city-events{
+        li a{
+          background:$gray_medium;
+          color:$white;
 
-      .sidebar{
-        margin-top:0;
-        width:100%;
-        section{
-          background:$green;
-
-          h2{
-            margin-bottom:-3px;
+          &:hover{
+            background:$orange;
           }
         }
-        ul#city-events{
-          li a{
-            background:$gray_medium;
-            color:$white;
 
-            &:hover{
-              background:$orange;
-            }
-          }
-
-          ul li{
-            padding: 5px 10px;
-          }
+        ul li{
+          padding: 5px 10px;
         }
       }
+    }
+
+    .blog{
+      article{
+        margin:0 0 20px 0;
+
+        header{
+          margin:0 0 10px 0;
+        }
+      }
+    }
   }
 }
 
 @media only screen and (min-width: 600px) {
   #home{
     section[role=main]{
-      .recent-sermon{
 
-        @include clearfix;
-
-        a.img{
-          display:inline-block;
-          float:left;
-          margin:0 5% 0 0;
-          width:40%;
-        }
-        div{
-          display:inline-block;
-          float:right;
-          width:55%;
-
-          p{
-            font-size:0.8em;
-          }
-        }
-        ul{
-          clear:right;
-          float:right;
-          width:55%;
-
-          li{
-            display:inline-block;
-            font-size:0.8em;
-            width:45%;
-
-            a{
-              display:block;
-            }
-          }
-        }
-      }
     }
   }
 }
@@ -139,37 +71,29 @@
 @media only screen and (min-width: 1024px) {
   #home{
     section[role=main]{
-      .recent-sermon{
-        a.img{
-          display:inline-block;
-          float:left;
-          margin:0 5% 0 0;
-          width:30%;
-        }
-        div{
-          float:left;
-          width:40%;
-
-          p{
-            font-size:1em;
-          }
-        }
-        ul{
-          width:20%;
-
-          li{
-            display:block;
-            font-size:1em;
-            margin:0 0 10px 0;
-            width:100%;
-          }
-        }
-      }
       .content{
         width:65%;
       }
       .sidebar{
         width:30%;
+      }
+
+      .blog{
+        article{
+          float:right;
+          width:48%;
+
+          &:nth-of-type(2n+1){
+            clear:both;
+            float:left;
+          }
+
+          h4{
+            span{
+              display:block;
+            }
+          }
+        }
       }
     }
   }

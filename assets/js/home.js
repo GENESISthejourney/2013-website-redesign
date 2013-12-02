@@ -11,7 +11,7 @@
         dataType: 'jsonp',
         success: function(events) {
             var data_array = [];
-            for(var i=0; i<events.length; i++) {
+            for(var i=0; i<10; i++) {
                 data_array.push(events[i]['global_event']);
             }
             $.each(data_array, function( index, event ) {

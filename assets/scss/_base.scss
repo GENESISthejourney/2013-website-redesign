@@ -28,12 +28,35 @@ a{
 			&:hover{
 				background:$orange;
 				color:$white;
-				text-decoration:none;
+			}
+
+			&.no-link:hover{
+				background:$white;
+				color:$orange;
+			}
+		}
+		&.green{
+			background:$green;
+			color:$white;
+
+			&:hover{
+				background:$blue;
+			}
+		}
+		&.inline{
+			display:inline-block;
+		}
+
+		&.no-link{
+			cursor:default;
+
+			&:hover{
+				background:$orange;
 			}
 		}
 
-		&.inline{
-			display:inline-block;
+		&.multiple{
+			margin:5px 10px;
 		}
 
 		i{
@@ -137,6 +160,10 @@ blockquote{
 .notice{
 	color:$gray_medium;
 	font-size:0.8em;
+}
+
+.clear{
+	clear:both;
 }
 
 input{

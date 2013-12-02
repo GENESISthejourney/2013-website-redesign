@@ -1,4 +1,4 @@
-section[role=main] .sermons{
+.sermons{
 	header{
 		h1{
 			margin-bottom:0;
@@ -22,24 +22,7 @@ section[role=main] .sermons{
 		padding:0;
 
 		li{
-			border-radius:2px;
 			margin:5px 0;
-
-			a{
-				background:$orange;
-				color:$white;
-				display:block;
-				padding:10px 20px;
-
-				&:hover{
-					background:$green;
-				}
-
-				i{
-					font-size:1.4em;
-					vertical-align:-3px;
-				}
-			}
 		}
 	}
 }
@@ -198,6 +181,10 @@ a.sermon-archive{
 			float:left;
 			padding:0 10px;
 			width:50%;
+
+			&:nth-of-type(2n+1){
+				clear:both;
+			}
 		}
 	}
 	a.sermon-archive{
@@ -214,6 +201,13 @@ a.sermon-archive{
 	.series{
 		div{
 			width:33%;
+
+			&:nth-of-type(2n+1){
+				clear:none;
+			}
+			&:nth-of-type(3n+1){
+				clear:both;
+			}
 		}
 	}
 	a.sermon-archive{

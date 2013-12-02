@@ -16,6 +16,55 @@
 			$('#hero').height($('#hero .slide img').height());
 		});
 
+    $('a.toggle-slide').click(function(){
+        $('div.slide-out').toggle();
+        $('.slide-out .followup').removeClass('error success');
+          $('.slide-out .initial').show();
+            $('.slide-out form').find("input[type=text], textarea").val("");
+        return false;
+    });
+    $('.slide-out a.close').click(function(){
+       $('div.slide-out').hide();
+        return false;
+    });
+    $('.slide-out a.try-again').click(function(){
+      $('.slide-out .followup').removeClass('error');
+      $('.slide-out .initial').show();
+    });
+
+    $('form.ajax').submit(function(){
+      if(!$('input[name=name]', this).val()){
+        alert('Name is required.')
+        return false;
+      }
+      if(!$('input[name=email]', this).val() && !$('input[name=phone]', this).val()){
+        alert('You must provide an email or phone for us to contact you.')
+        return false;
+      }
+
+      if($(this).hasClass('question') && !$('textarea[name=question]', this).val()){
+        alert('Question is required.')
+        return false;
+      }
+
+      var dataString = $(this).serialize();
+
+      $.ajax({
+        type: 'POST',
+        dataType: 'json',
+        url: '/',
+        data: dataString,
+        success: function(r) {
+          $('.slide-out .initial').hide();
+          if(r.status == 'error')
+            $('.slide-out .followup').addClass('error');
+          else
+            $('.slide-out .followup').addClass('success');
+        }
+      });
+      return false;
+    });
+
 
 		$('.mobile-nav a.toggle').click(function(){
 			$('body').toggleClass('active-nav');

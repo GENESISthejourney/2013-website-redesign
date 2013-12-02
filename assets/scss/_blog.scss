@@ -57,14 +57,6 @@
 				}
 			}
 		}
-		p{
-			&:first-child:first-letter{
-				float:left;
-				font-size:2em;
-				line-height:1.75em;
-				padding:4px 8px 0 3px;
-			}
-		}
 
 		footer{
 			@include clearfix;

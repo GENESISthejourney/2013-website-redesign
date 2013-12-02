@@ -2,6 +2,95 @@ form{
 
 }
 
+.slide-out{
+  background:$orange;
+  color:$white;
+  display:none;
+  margin:20px 0;
+  padding:20px;
+  position:relative;
+
+  h1, h2, h3, h4, h5, h6{
+    color:$white;
+  }
+
+  .initial{
+    display:block;
+  }
+
+  .followup{
+    .success, .error{
+      display:none;
+    }
+
+    &.success{
+      .success{
+        display:block;
+      }
+    }
+    &.error{
+      .error{
+        display:block;
+      }
+    }
+
+    a{
+      color:$white;
+      text-decoration:underline;
+    }
+  }
+
+  a.close{
+    background:$gray_dark;
+    border-radius:15px;
+    color:$white;
+    padding:3px 10px;
+    position:absolute;
+    right:-10px;
+    top:-10px;
+
+    &:hover{
+      background:$gray_medium;
+    }
+  }
+
+  label{
+    display:block;
+  }
+  input[type=text], textarea{
+    background:$white;
+    border:0 none;
+    border-radius:2px;
+    font-size:2em;
+    margin:0 0 20px 0;
+    padding:5px 10px;
+    width:100%;
+
+    @include box-sizing(border-box);
+  }
+
+  textarea{
+    font-size:1em;
+    height:75px;
+    resize:none;
+  }
+
+  input[type=submit]{
+    background:$green;
+    border:0 none;
+    border-radius:2px;
+    color:$white;
+    font-size:2em;
+    padding:5px 0;
+    text-align:center;
+    width:100%;
+
+    &:hover{
+      background:$blue;
+    }
+  }
+}
+
 form.login{
   background:rgba(255, 255, 255, 0.6);
   border-top:5px solid $orange;

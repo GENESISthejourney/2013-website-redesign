@@ -159,6 +159,22 @@ section[role=main]{
 	}
 }
 
+section.feature{
+  background:$orange;
+  border-radius:5px;
+  color:$white;
+  padding:20px;
+  text-align:center;
+
+  h2{
+    color:$white;
+  }
+
+  a.button.white:hover{
+    background:$green;
+  }
+}
+
 #no-overlap{
   .sidebar{
     margin-top:0;
@@ -236,6 +252,14 @@ section[role=main]{
       float:left;
       width:30%;
     }
+  }
+  .main-text.floated{
+    float:left;
+    width:55%;
+  }
+  section.feature{
+    float:right;
+    width:35%;
   }
 }
 
