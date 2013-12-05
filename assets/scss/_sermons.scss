@@ -33,15 +33,18 @@
 	position:relative;
 
 	#prev, #next{
-    color:$orange;
-    display:block;
-    font-size:1.6em;
     height:30px;
-    line-height:1;
     margin-top:-15px;
     position:absolute;
 		top:50%;
     width:30px;
+
+    a{
+    	color:$orange;
+	    display:block;
+	    font-size:1.6em;
+	    line-height:1;
+    }
 
     &.disabled{
     	color:$gray_medium;
