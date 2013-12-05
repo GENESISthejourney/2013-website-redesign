@@ -1,4 +1,5 @@
 div.mobile-nav{
+	background:$orange;
 	color:#fff;
 	padding:5px 0;
 
@@ -72,7 +73,7 @@ header[role=banner]{
 	}
 
 	aside{
-		background: #eee;
+		background:$orange;
 		padding:5px 60px 0 125px;
 		position:relative;
 		z-index:2;

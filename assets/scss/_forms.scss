@@ -1,5 +1,44 @@
 form{
+  label{
+    display:block;
+  }
+  input[type=text], textarea{
+    background:$gray_medium;
+    border:0 none;
+    border-radius:2px;
+    color:$white;
+    font-size:2em;
+    margin:0 0 20px 0;
+    padding:5px 10px;
+    width:100%;
 
+    @include box-sizing(border-box);
+
+    @include placeholder {
+      color:$gray_light;
+    }
+  }
+
+  textarea{
+    font-size:1em;
+    height:150px;
+    resize:none;
+  }
+
+  input[type=submit]{
+    background:$orange;
+    border:0 none;
+    border-radius:2px;
+    color:$white;
+    font-size:2em;
+    padding:5px 0;
+    text-align:center;
+    width:100%;
+
+    &:hover{
+      background:$green;
+    }
+  }
 }
 
 .slide-out{
@@ -61,12 +100,17 @@ form{
     background:$white;
     border:0 none;
     border-radius:2px;
+    color:$gray_dark;
     font-size:2em;
     margin:0 0 20px 0;
     padding:5px 10px;
     width:100%;
 
     @include box-sizing(border-box);
+
+    @include placeholder {
+      color:$gray_medium;
+    }
   }
 
   textarea{
@@ -77,12 +121,6 @@ form{
 
   input[type=submit]{
     background:$green;
-    border:0 none;
-    border-radius:2px;
-    color:$white;
-    font-size:2em;
-    padding:5px 0;
-    text-align:center;
     width:100%;
 
     &:hover{
@@ -124,16 +162,26 @@ form.login{
     }
 
     input[type=text]{
+      background:$white;
       border:0 none;
       border-radius:0 5px 5px 0;
+      color:$gray_dark;
+      font-size:1em;
+      margin:0;
+      padding:0;
       text-align:center;
       width:100%;
     }
 
     input[type=password]{
       border:0 none;
+      color:$gray_dark;
       text-align:center;
       width:100%;
+
+      @include placeholder {
+        color:$gray_light;
+      }
     }
 
     a.submit{

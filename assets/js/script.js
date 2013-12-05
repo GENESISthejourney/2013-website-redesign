@@ -3,6 +3,8 @@
 (function($){
 	$(document).ready(function() {
 
+    $('input, textarea').placeholder();
+
 		$(window).bind('resize orientationchange',function(){
 			if($('#hero')){
 				$('#hero').height($('#hero .slide:first img').height());
