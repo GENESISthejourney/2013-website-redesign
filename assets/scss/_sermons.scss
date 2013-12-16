@@ -132,41 +132,6 @@
 	}
 }
 
-a.sermon-archive{
-	display:block;
-	position:relative;
-
-	span{
-		background:$gray_dark;
-		color:$white;
-		display:block;
-		padding:5px 0;
-		text-align:center;
-		width:100%;
-	}
-
-	img{
-		max-width:100%;
-		position:relative;
-		z-index:1;
-	}
-
-	&:hover span{
-		background:$green;
-	}
-}
-
-.series-popout{
-	background:$gray_medium;
-	border-radius:5px;
-	color:$white;
-	padding:10px;
-
-	img{
-		max-width:100%;
-	}
-}
-
 @media only screen and (min-width: 600px) {
 	.sermons{
 		ul.actions{
@@ -190,14 +155,6 @@ a.sermon-archive{
 			}
 		}
 	}
-	a.sermon-archive{
-		span{
-			left:0;
-			position:absolute;
-			top:0;
-			z-index:2;
-		}
-	}
 }
 
 @media only screen and (min-width: 1024px) {
@@ -211,11 +168,6 @@ a.sermon-archive{
 			&:nth-of-type(3n+1){
 				clear:both;
 			}
-		}
-	}
-	a.sermon-archive{
-		span{
-			font-size:2em;
 		}
 	}
 }

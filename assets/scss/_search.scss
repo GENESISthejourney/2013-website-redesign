@@ -1,0 +1,30 @@
+.search{
+
+  .search-terms{
+    color:$gray_medium;
+  }
+
+  .search-result{
+    background:$white;
+    border:1px solid $gray_medium;
+    border-radius:5px;
+    margin:20px 0;
+    padding:10px;
+
+    h4{
+      margin:0 !important;
+    }
+
+    .date{
+      display:block;
+      color:$gray_light;
+      font-size:0.8em;
+      margin-bottom:5px;
+    }
+  }
+
+  input[type=submit]{
+    margin:0 0 0 20px;
+    padding:5px 20px;
+  }
+}

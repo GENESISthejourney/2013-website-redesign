@@ -34,6 +34,10 @@ section[role=main]{
   }
 
   .main-text{
+    img{
+      max-width:100%;
+    }
+
     ul{
       list-style:none;
       padding:0 0 0 20px;
@@ -175,13 +179,6 @@ section.feature{
   }
 }
 
-#no-overlap{
-  .sidebar{
-    margin-top:0;
-    margin-right:0;
-  }
-}
-
 @media only screen and (min-width: 600px) {
   section[role=main]{
     .content-full, .content-left, .sidebar{
@@ -214,7 +211,7 @@ section.feature{
 
     .sidebar{
     	float:right;
-    	margin:-30px 20px 0 0;
+      margin:20px 0 0 0;
     	width:30%;
 
     	section{
@@ -239,7 +236,6 @@ section.feature{
     }
 
     .sidebar{
-    	margin-top:-60px;
     	width:25%;
     }
 
@@ -253,12 +249,9 @@ section.feature{
       width:30%;
     }
   }
-  .main-text.floated{
-    float:left;
-    width:55%;
-  }
   section.feature{
     float:right;
+    margin:0 0 20px 20px;
     width:35%;
   }
 }
@@ -269,7 +262,6 @@ section.feature{
         margin:40px auto 20px auto;
 
         .sidebar{
-        	margin-top:-100px;
 
           section h2{
             font-size:2.4em;

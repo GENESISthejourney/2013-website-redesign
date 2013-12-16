@@ -33,8 +33,11 @@ section[role=main]{
 	z-index:1;
 
     .content-left, .content-full{
-        h1, h2, h3, h4, h5, h6{
+        h2, h3, h4, h5, h6{
             margin:0.25em 0;
+        }
+        h1{
+          margin:0 0 0.25em 0;
         }
     }
 }
