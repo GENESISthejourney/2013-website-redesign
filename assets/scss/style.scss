@@ -27,7 +27,6 @@ $twitter:#17b5ea;
 $twitter_hover:#45c4ee;
 
 
-
 $body_color: $gray_dark;
 $heading_color: $gray_dark;
 $subtitle_color: $gray_medium;
@@ -36,12 +35,8 @@ $link_color: $orange;
 $link_color_hover: $orange_dark;
 $nav_link_color: #f7941e;
 
-
-
 $default_font_family: "futura-pt", Arial, Helvetica, sans-serif;
 $condensed_font_family: "futura-pt-condensed", sans-serif;
-$heading_font_family: "minion-pro", serif;
-
 
 @mixin body_background {
 	background: #eee url(../images/bkgrd.png) repeat 0 0;
@@ -74,6 +69,7 @@ $heading_font_family: "minion-pro", serif;
 
 @import 'sermons';
 @import 'blog';
+@import 'media';
 @import 'pagination';
 
 @import 'hero';
