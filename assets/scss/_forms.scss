@@ -47,7 +47,7 @@ form{
     resize:none;
   }
 
-  input[type=submit]{
+  input[type=submit], a.button{
     background:$orange;
     border:0 none;
     border-radius:2px;
@@ -56,6 +56,11 @@ form{
     padding:5px 0;
     text-align:center;
     width:100%;
+
+    &.white{
+      background:$white;
+      color:$orange;
+    }
 
     &:hover{
       background:$green;

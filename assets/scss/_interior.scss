@@ -132,6 +132,20 @@ section[role=main]{
 								color:$white;
 							}
 						}
+
+            ul{
+              li{
+                a{
+                  background:$white;
+                  color:$gray_dark;
+
+                  &:hover, &.current, &.currentParent{
+                    background:$white;
+                    color:$orange;
+                  }
+                }
+              }
+            }
 					}
 				}
 			}

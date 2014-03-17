@@ -1,22 +1,22 @@
 // JavaScript Document
 
 (function($){
-	$(document).ready(function() {
+  $(document).ready(function() {
 
     $('input, textarea').placeholder();
 
-		$(window).bind('resize orientationchange',function(){
-			if($('#hero')){
-				$('#hero').height($('#hero .slide:first img').height());
-			}
-			if($('#hero').height() == 0){
-				$('#hero').height($('#hero .slide:last img').height());
-			}
-		});
+    $(window).bind('resize orientationchange',function(){
+      if($('#hero')){
+        $('#hero').height($('#hero .slide:first img').height());
+      }
+      if($('#hero').height() == 0){
+        $('#hero').height($('#hero .slide:last img').height());
+      }
+    });
 
-		$('#hero').onImagesLoad(function(){
-			$('#hero').height($('#hero .slide img').height());
-		});
+    $('#hero').onImagesLoad(function(){
+      $('#hero').height($('#hero .slide img').height());
+    });
 
     $('a.toggle-slide').click(function(){
         $('div.slide-out').toggle();
@@ -51,103 +51,106 @@
 
       var dataString = $(this).serialize();
 
-      $.ajax({
-        type: 'POST',
-        dataType: 'json',
-        url: '/',
-        data: dataString,
-        success: function(r) {
-          $('.slide-out .initial').hide();
+      formSubmit(dataString, function(r){
+        $('.slide-out .initial').hide();
           if(r.status == 'error')
             $('.slide-out .followup').addClass('error');
           else
             $('.slide-out .followup').addClass('success');
-        }
       });
       return false;
     });
 
+    $('.mobile-nav a.toggle').click(function(){
+      $('body').toggleClass('active-nav');
+      return false;
+    });
 
-		$('.mobile-nav a.toggle').click(function(){
-			$('body').toggleClass('active-nav');
-			return false;
-		});
+    $('header[role=banner] nav ul:first').find('a').click(function(e){
+      e.stopPropagation();
+      var fancyNav = false;
+      var obj = $(this).parent('li');
+      var navId = obj.data('nav');
 
-		$('header[role=banner] nav ul:first').find('a').click(function(e){
-			e.stopPropagation();
-			var fancyNav = false;
-			var obj = $(this).parent('li');
-			var navId = obj.data('nav');
+      if ($(window).width() > 599)
+        fancyNav = true;
 
-			if ($(window).width() > 599)
-				fancyNav = true;
-
-			if(!obj.children('ul').length && obj.data('nav') != 'search')
-				return;
+      if(!obj.children('ul').length && obj.data('nav') != 'search')
+        return;
 
       obj.parent('ul').children('li').removeClass('icon-minus').addClass('icon-plus');
 
-			if(obj.hasClass('active')){
+      if(obj.hasClass('active')){
         obj.removeClass('active');
-				$('#'+navId).removeClass('active');
-				return false;
-			}
+        $('#'+navId).removeClass('active');
+        return false;
+      }
       obj.parent('ul').children('li').removeClass('active');
-			obj.addClass('active icon-minus').removeClass('icon-plus');
-			$('.fancy-nav').removeClass('active');
+      obj.addClass('active icon-minus').removeClass('icon-plus');
+      $('.fancy-nav').removeClass('active');
 
-			if (fancyNav){
-				$('#'+navId).addClass('active');
-			}
-			return false;
-		});
+      if (fancyNav){
+        $('#'+navId).addClass('active');
+      }
+      return false;
+    });
 
-		$('a[href="#"]:not(.override)').click(function(){
-			return false;
-		});
+    $('a[href="#"]:not(.override)').click(function(){
+      return false;
+    });
 
-		$('#searchTerm').focus(function(){
-			$(this).parent('form').addClass('focus').addClass('expanded');
-		});
+    $('#searchTerm').focus(function(){
+      $(this).parent('form').addClass('focus').addClass('expanded');
+    });
 
-		$('#searchTerm').blur(function(){
-			$(this).parent('form').removeClass('focus');
+    $('#searchTerm').blur(function(){
+      $(this).parent('form').removeClass('focus');
 
-			if ($(this).val().length == 0)
-				$(this).parent('form').removeClass('expanded');
-		});
+      if ($(this).val().length == 0)
+        $(this).parent('form').removeClass('expanded');
+    });
 
-		$('html').click(function(e){
-			$('header[role=banner] nav ul li').removeClass('active');
-			$('.fancy-nav').removeClass('active');
-		});
+    $('html').click(function(e){
+      $('header[role=banner] nav ul li').removeClass('active');
+      $('.fancy-nav').removeClass('active');
+    });
 
-		$('.fancy-nav').click(function(e){
-			e.stopPropagation();
-		});
+    $('.fancy-nav').click(function(e){
+      e.stopPropagation();
+    });
 
-		$('a.submit').click(function(e){
-			e.stopPropagation();
-			$(e.target).parents('form').submit();
-			return false;
-		});
+    $('a.submit').click(function(e){
+      e.stopPropagation();
+      $(e.target).parents('form').submit();
+      return false;
+    });
 
-		$('a.share-twitter').click(function(e){
-		  e.preventDefault();
-		  var loc = $(this).attr('href');
-		  var title  = escape($(this).data('title'));
-		  window.open('http://twitter.com/share?url=' + loc + '&text=' + title + '&', 'twitterwindow', 'height=450, width=550, top='+($(window).height()/2 - 225) +', left='+$(window).width()/2 +', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
-		});
+    $('a.share-twitter').click(function(e){
+      e.preventDefault();
+      var loc = $(this).attr('href');
+      var title  = escape($(this).data('title'));
+      window.open('http://twitter.com/share?url=' + loc + '&text=' + title + '&', 'twitterwindow', 'height=450, width=550, top='+($(window).height()/2 - 225) +', left='+$(window).width()/2 +', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
+    });
 
-		$('a.share-facebook').click(function(e){
-		  e.preventDefault();
-		  var loc = $(this).attr('href');
-		  var title  = escape($(this).data('title'));
-		  window.open('https://www.facebook.com/sharer/sharer.php?u=' + loc + '&', 'facebookwindow', 'height=626, width=436, top='+($(window).height()/2 - 225) +', left='+$(window).width()/2 +', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
-		});
+    $('a.share-facebook').click(function(e){
+      e.preventDefault();
+      var loc = $(this).attr('href');
+      var title  = escape($(this).data('title'));
+      window.open('https://www.facebook.com/sharer/sharer.php?u=' + loc + '&', 'facebookwindow', 'height=626, width=436, top='+($(window).height()/2 - 225) +', left='+$(window).width()/2 +', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
+    });
   });
 
-	var days, goLive, hours, intervalId, minutes, seconds;
+  formSubmit = function(data, successFunction){
+    $.ajax({
+      type: 'POST',
+      dataType: 'json',
+      url: '/',
+      data: data,
+      success: successFunction
+    });
+  };
+
+  var days, goLive, hours, intervalId, minutes, seconds;
 
   // Your churchonline.org url
   var churchUrl = "http://genesisthejourney.churchonline.org";
