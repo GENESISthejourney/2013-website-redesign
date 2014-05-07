@@ -1,6 +1,11 @@
 section[role=main] .media{
+  border-top:1px solid $gray_medium;
   padding:20px 0;
   text-align:center;
+
+  &:first-of-type{
+    border-top:0 none;
+  }
 
   a.img{
     img{
