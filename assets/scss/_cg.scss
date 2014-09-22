@@ -36,6 +36,30 @@
     }
   }
 
+  dl{
+    @include clearfix;
+    width:100%;
+  }
+
+  dt{
+    clear:both;
+    font-weight:bold;
+    float:left;
+    margin:5px 0;
+    width:20%;
+  }
+  dd{
+    float:right;
+    margin:5px 0;
+    width:75%;
+  }
+
+  .cg-signup{
+    font-size:2em;
+    margin:20px 0;
+    text-align: center;
+  }
+
   #map{
     clear:both;
     height:200px;
@@ -139,7 +163,6 @@
     }
     ul{
       li{
-        margin:0;
         width:auto;
 
         &.right{

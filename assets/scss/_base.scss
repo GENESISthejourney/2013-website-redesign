@@ -50,6 +50,11 @@ a{
       &:hover{
         background:$green;
       }
+
+      &.no-link:hover{
+        background:$blue;
+        color:$white;
+      }
     }
 		&.inline{
 			display:inline-block;
@@ -193,6 +198,13 @@ blockquote{
 .notice{
 	color:$gray_medium;
 	font-size:0.8em;
+
+  &.orange{
+    background:$orange;
+    border-radius:3px;
+    color:$white;
+    padding:10px;
+  }
 }
 
 .clear{

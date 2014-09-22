@@ -21,8 +21,9 @@
     $('a.toggle-slide').click(function(){
         $('div.slide-out').toggle();
         $('.slide-out .followup').removeClass('error success');
-          $('.slide-out .initial').show();
-            $('.slide-out form').find("input[type=text], textarea").val("");
+        $('.slide-out .initial').show();
+        $('.slide-out form').find("input[type=text], textarea").val("");
+        $('div.slide-out form').attr('data-type', $(this).attr('data-type'));
         return false;
     });
     $('.slide-out a.close').click(function(){
@@ -51,12 +52,30 @@
 
       var dataString = $(this).serialize();
 
-      formSubmit(dataString, function(r){
+      formSubmit(dataString, '/', function(r){
         $('.slide-out .initial').hide();
-          if(r.status == 'error')
+          if(r.status == 'error'){
             $('.slide-out .followup').addClass('error');
-          else
+          }
+          else{
             $('.slide-out .followup').addClass('success');
+
+            if($('.slide-out form.request').attr('data-type') == 'signup'){
+              if($('.signup form').length > 0){
+                var signup = $('.signup form');
+                var form = $('form.ajax');
+
+                $('input[name=__app_message_title]', signup).val($('input[name=name]', form).val());
+                $('input[name=__app_email]', signup).val($('input[name=email]', form).val());
+                $('input[name=phone]', signup).val($('input[name=phone]', form).val());
+
+                formSubmit(signup.serialize(), signup.attr('action'), function(r){});
+              }
+              else{
+                console.log('There is no signup form');
+              }
+            }
+          }
       });
       return false;
     });
@@ -140,11 +159,11 @@
     });
   });
 
-  formSubmit = function(data, successFunction){
+  formSubmit = function(data, url, successFunction){
     $.ajax({
       type: 'POST',
       dataType: 'json',
-      url: '/',
+      url: url,
       data: data,
       success: successFunction
     });
