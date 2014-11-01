@@ -52,13 +52,27 @@
 
       var dataString = $(this).serialize();
 
-      formSubmit(dataString, '/', function(r){
+      var url = '/';
+
+      if($(this).hasClass('submit-self'))
+        url = $(this).attr('action');
+
+      var register = false;
+
+      if($(this).hasClass('register'))
+        register = true;
+
+      formSubmit(dataString, url, function(r){
         $('.slide-out .initial').hide();
           if(r.status == 'error'){
             $('.slide-out .followup').addClass('error');
           }
           else{
             $('.slide-out .followup').addClass('success');
+
+            if(register){
+              $('.slide-out form.paypal').submit();
+            }
 
             if($('.slide-out form.request').attr('data-type') == 'signup'){
               if($('.signup form').length > 0){

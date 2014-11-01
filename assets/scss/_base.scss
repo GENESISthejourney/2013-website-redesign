@@ -85,6 +85,12 @@ a{
 			float:right;
 		}
 
+    &.large{
+      font-size:2em;
+      margin:20px 0;
+      text-align: center;
+    }
+
 		i[class^="icon-"], em[class^="icon-"]{
 			padding:0 0 0 10px;
 
